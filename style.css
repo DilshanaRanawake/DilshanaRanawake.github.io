@@ -90,17 +90,17 @@ section {
 }
 
 .hero {
-    height: 100vh;
+    height: 10vh;
     width: 100%;
     background: url(./img/background.png);
-    background-position: top right;
+    /* background-position: top right; */
     background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
 }
 .main-content h5 {
-
+    transition: all .50s ease;
     font-size: 1.6rem;
 }
 .main-content h4 {
@@ -136,15 +136,16 @@ section {
     max-height: 150px;
     border-radius: 50%;
     overflow: hidden; /* Ensures the image fits within the circle */
-    background: white; /* White circle */
+    background: transparent; /* White circle */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative; 
-    padding: 0px;
-    margin: 0px;
+    /* padding: 0px;
+    margin: 0px; */
     box-shadow: 0 0 20px var(--main-color);
     border: 7px solid var(--main-color);
+    transition: all .50s ease;
 }
 
 .profile-pic {
@@ -215,16 +216,57 @@ header.sticky {
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     gap: 1rem;
+    
 }
-.about-img img {
-    width: 100%;
-    height: 530px;
-    max-width: 530px;
+/* .about-img img {
+    width: 50%;
+    height: 230px;
+    max-width: 230px;
     border-radius: 50%;
     object-fit: cover;
     border: 7px solid var(--main-color);
     box-shadow: 0 0 20px var(--main-color);
 }
+.about-img-2 img {
+    width: 50%;
+    height: 230px;
+    max-width: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+} */
+
+.about-img {
+    display: flex;
+    position: relative;
+    
+}
+
+.about-img-2{
+    margin-top:100px;
+    margin-left: -70px;
+}
+
+.about-img-1,
+.about-img-2 {
+    width: 45%;
+    height: 300px;
+    max-width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px var(--main-color);
+    border: 7px solid var(--main-color);
+    position: relative;
+}
+
+.about-img-1 img,
+.about-img-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .about-text h2 {
     font-size: var(--h2-font);
     line-height: 1.3;
@@ -471,6 +513,13 @@ color: var(--other-color);
         background-position: center;
     }
     
+    .about-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        object-fit: cover;
+    }
     .image-container {
         max-width: 250px;
         max-height: 250px;
@@ -479,6 +528,14 @@ color: var(--other-color);
 @media (max-width:1290px){
     .box {
         padding: 40px 40px 46px;
+    }
+    
+    .about-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        object-fit: cover;
     }
     .box img {
         width: 100%;
@@ -496,14 +553,13 @@ color: var(--other-color);
         grid-area: 2rem;
         text-align: center;
     }
-    .about-img img {
-        text-align: center;
+    
+    .about-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        height: 400px;
-        max-width: 400px;
-        border-radius: 50%;
         object-fit: cover;
-        margin: 0 auto;
     }
     :root {
         --h1-font:4rem;
@@ -576,14 +632,12 @@ color: var(--other-color);
         margin: 20px 0px 20px;
         line-height: 1.2;
     }
-
-    .about-img img {
-        text-align: center;
+    
+    .about-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        height: 300px;
-        max-width: 300px;
-        border-radius: 50%;
         object-fit: cover;
-        margin: 0 auto;
     }
 }
