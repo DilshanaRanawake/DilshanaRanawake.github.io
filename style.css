@@ -404,7 +404,7 @@ body .about-text ul {
     padding: 20px;
     transition: all .50s ease;
     overflow: hidden;
-    height: 100%;
+    height: auto;
 }
 .main-row {
     display: flex;
@@ -413,14 +413,15 @@ body .about-text ul {
     margin-bottom: .5rem;
 }
 .row h5 {
-    font-size: 15px;
+    font-size: 14;
     font-weight: 300;
     min-height: 60px;
     color: var(--other-color);
     line-height: 1.5em;
+    text-align: justify;
 }
 .row i {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 55px;
@@ -429,10 +430,10 @@ body .about-text ul {
     border-radius: 50%;
     color: var(--text-color);
     background: #8a51c6;
-    
+    position: relative;
 }
 .row h4 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom:10px 
     ;
@@ -441,8 +442,61 @@ body .about-text ul {
 .row:hover {
     border: 1px solid var(--main-color);
     transform: translateY(-5px) scale(1.03);
-    cursor: pointer;
+    cursor: default;
 }
+.row:hover .ri-github-fill {
+    border: 2px solid var(--main-color);
+    /* border-radius: 8px; */
+    cursor: pointer;
+    background: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+  
+.expandable-content {
+    display: none; /* Hidden by default */
+    
+}
+.expandable-content.show {
+    display: block;
+    max-height: 500px; /* Adjust as needed */
+  }
+
+
+/* 
+.expand-btn {
+background-color: #007BFF;
+color: white;
+padding: 5px 10px;
+border: none;
+cursor: pointer;
+text-align: center;
+border-radius: 5px;
+font-size: 14px;
+}
+
+.expand-btn:hover {
+background-color: #0056b3;
+} */
+ 
+.expand-btn {
+    cursor: pointer;
+    color:var(--main-color);
+    font-size: 20px; /* Adjust size as needed */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    background-color: transparent !important;
+    padding: 0%;
+}
+
+.expand-btn.active {
+    transform: rotate(180deg) !important; /* Rotate icon when expanded */
+}
+
+.expand-btn:hover {
+    color:var(--main-color);
+}
+
 .contact-form {
     display: flex;
     align-items: center;
