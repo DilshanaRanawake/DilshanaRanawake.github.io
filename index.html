@@ -14,6 +14,16 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "P3QF18Dw54lvVFXWO",
+        });
+    })();
+  </script>
 </head>
 <body>
     
@@ -259,7 +269,7 @@
       </div>
       <h4>Website Development</h4>
     </div> -->
-    <a href="#" class="btn">More Projects >></a>
+    <a href="https://github.com/DilshanaRanawake?tab=repositories" class="btn">More Projects >></a>
   </div>
   
 </section>
@@ -358,18 +368,18 @@
     <h2>Contact<span>me</span></h2>
   </div>
   <div class="contact-form" data-aos="zoom-in">
-    <form action="">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Email Address..." required>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here." required></textarea>
-      <input type="submit" value="Send Message" class="send-btn">
+    <form onsubmit="sendMail(event)">
+      <input type="text" placeholder="Your name" id="name" required>
+      <input type="email" placeholder="Email Address..." id="email" required>
+      <textarea name="" id="message" cols="30" rows="10" placeholder="Write Message Here." required></textarea>
+      <button type="submit" class="send-btn">Send</button>
     </form>
   </div>
 </section>
 
 <div class="footer">
   <div class="copyright">
-    <p>2025 XXX, All Right Reserved.</p>
+    <p>&copy; 2025 Dilshana Ranawake. All Rights Reserved.</p>
   </div>
   <a href="#home" class="scroll-top">
     <i class="ri-arrow-up-s-fill"></i>

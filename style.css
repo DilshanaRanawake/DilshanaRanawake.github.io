@@ -183,6 +183,7 @@ section {
 
 .btn {
     display: inline-block;
+    width: auto; 
     padding: 11px 26px;
     background:var(--main-color) ;
     color: var(--bg-color);
@@ -468,6 +469,13 @@ body .about-text ul {
     transform: rotate(180deg);
 }
 
+.Projects-content .btn {
+    margin: 30px auto; /* Center horizontally */
+    display: block;    /* Centering requires block display */
+    width: fit-content; /* Fit button to content size */
+    height: fit-content;
+  }
+
 .certificates{
     margin: 0;
 }
@@ -669,6 +677,8 @@ form .send-btn:hover {
     box-shadow: 0 0 20px var(--main-color);
     cursor: pointer;
 }
+
+
 .footer {
     padding: 22px 16%;
     background:var(--second-bg-color) ;
