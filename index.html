@@ -32,11 +32,12 @@
   <a href="#" class="logo">Software <span>Engineering</span> <h6>Intern</h6></a>
   
   <ul class="navlist">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#volunteering">Volunteering</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#techskills" class="nav-link">Skills</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+    <li><a href="#volunteers" class="nav-link">Volunteering</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
   <div class="bx bx-menu" id="menu-icon"></div>
 <!-- <div class="top-btnn">
@@ -98,7 +99,7 @@
   </div>
   <div class="about-text" >
     <h2><span>Professional Summary</span></h2>
-    <p>I am a highly motivated Software Engineering enthusiast with a solid foundation in web development and a growing interest in Artificial Intelligence. With hands-on experience in designing, developingm applications, I am eager to apply my technical skills in a real-world environment. As I continue my studies at the University of Kelaniya, I aim to bridge the gap between academic knowledge and industry practices, contributing to impactful and innovative software solutions.</p>
+    <p>I am a highly motivated Software Engineering enthusiast with a solid foundation in web development and a growing interest in Artificial Intelligence. With hands-on experience in designing, developing applications, I am eager to apply my technical skills in a real-world environment. As I continue my studies at the University of Kelaniya, I aim to bridge the gap between academic knowledge and industry practices, contributing to impactful and innovative software solutions.</p>
     <br>
     <p>I am actively seeking a Software Engineering Internship opportunity where I can further develop my skills, collaborate with experienced professionals, and contribute to innovative projects.</p>
     <br><br><h2><span>Education</span></h2>
@@ -165,7 +166,7 @@
 </section>
 
 
-<section class="Projects" id="Projects" data-aos="zoom-in-up">
+<section class="Projects" id="projects" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
     <h2>My <span>Projects</span></h2>
   </div>
@@ -276,8 +277,8 @@
 
 <!-- <section class="experience"></section> -->
 
-<section class="certificate" data-aos="zoom-in-up">
-  <div class="center-text" id="certificates" data-aos="fade-down">
+<section class="certificate"  id="certificates" data-aos="zoom-in-up">
+  <div class="center-text" data-aos="fade-down">
     <h2>My <span>Certificates</span> </h2>
   </div>
   <div class="certificates-content" data-aos="zoom-in-up">
@@ -413,6 +414,26 @@ duration:1400,
     const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: sectionPosition, behavior: "smooth" });
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section"); // Select all sections
+    const navLinks = document.querySelectorAll(".navlist .nav-link"); // Select all nav links
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove "active" class from all links
+                navLinks.forEach(link => link.classList.remove("active"));
+                
+                // Add "active" class to the matching link
+                let activeLink = document.querySelector(`.navlist a[href="#${entry.target.id}"]`);
+                if (activeLink) activeLink.classList.add("active");
+            }
+        });
+    }, { threshold: 0.6 }); // 60% of section visible triggers change
+
+    sections.forEach(section => observer.observe(section));
+});
+
 </script>
 
 </body>

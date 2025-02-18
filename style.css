@@ -54,16 +54,22 @@ span {
     flex: 0 0 40%;
     list-style: none; 
 }
-.navlist a {
+.navlist .nav-link:hover {
+    color: var(--main-color);
+    
+}
+.navlist .nav-link {
     font-size: var(--p-font);
     font-weight: 500;
     color: var(--other-color);
     margin-left: 40px;
-    transition: all .50s ease;
+    transition: all .30s ease;
 }
-.navlist a:hover {
+
+.navlist .nav-link.active {
     color: var(--main-color);
-    text-shadow: 3px 3px 20px var(--main-color), -2px 1px 30px var(--text-color);
+    
+    font-weight: bold;
 }
 #menu-icon {
     font-size: 35px;
