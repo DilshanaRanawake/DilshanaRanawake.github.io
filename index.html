@@ -176,7 +176,7 @@
     </div>
     
     <div class="row">
-      <img src="images\prologProject.png" alt="">
+      <img src="images/prologProject.png" alt="">
       <div class="main-row">
         <div class="row-text">
           <h4>Prolog Disease-Diagnosis-System</h4>
@@ -191,7 +191,7 @@
     </div>
   
     <div class="row row_3">
-      <img src="images\smartdengueprjct.jpeg" alt="">
+      <img src="images/smartdengueprjct.jpeg" alt="">
       <div class="main-row">
         <div class="row-text">
           <h4>Smart dengue Alert</h4>
@@ -204,14 +204,16 @@
       </div>
       <h5>A mobile application designed to predict and prevent Dengue outbreaks in the Colombo district using machine learning and real-time data. <br></h5>
       <!-- <button class="expand-btn" onclick="toggleExpand(this)">Read More</button> -->
-      <i class="fa-solid fa-angle-down expand-btn" onclick="toggleExpand(this)"></i>
-      <div class="expandable-content">
-        <h5>As the team leader, I guided the development of the project, overseeing the frontend (Flutter), backend (Node.js, MongoDB), and machine learning model (Python, Flask). I ensured all parts were cohesive, providing early warnings and preventive measures to help communities stay informed and reduce the impact of Dengue through timely alerts and actionable insights.</h5>
+      <div class="expand-container">
+        <i class="fa-solid fa-angle-down expand-btn" onclick="toggleExpand(this)"></i>
+        <div class="expandable-content">
+          <h5>As the team leader, I guided the development of the project, overseeing the frontend (Flutter), backend (Node.js, MongoDB), and machine learning model (Python, Flask). I ensured all parts were cohesive, providing early warnings and preventive measures to help communities stay informed and reduce the impact of Dengue through timely alerts and actionable insights.</h5>
+        </div>
       </div>
     </div>
     
     <div class="row">
-      <img src="images\shoppingsiteprjct.png" alt="">
+      <img src="images/shoppingsiteprjct.png" alt="">
       <div class="main-row">
         <div class="row-text">
           <h4>Replica of Bloomingdale's website</h4>
@@ -226,7 +228,7 @@
     </div>
     
     <div class="row">
-      <img src="images\qmsprjct.png" alt="">
+      <img src="images/qmsprjct.png" alt="">
       <div class="main-row">
         <div class="row-text">
           <h4>Exam Management System</h4>
@@ -330,16 +332,14 @@ duration:1400,
 </script>
 <script>
   function toggleExpand(button) {
-    const parentRow = button.closest('.row');
-    const content = parentRow.querySelector('.expandable-content');
+    const content = button.closest('.expand-container').querySelector('.expandable-content');
 
-    const isExpanded = content.style.display === 'block' || content.classList.contains('active');
-
-    button.classList.toggle("active");
-
-    content.style.display = isExpanded ? 'none' : 'block';
-
+    if (content) {
+        content.classList.toggle('show'); // Show/hide the expandable content
+        button.classList.toggle('active'); // Rotate icon
+    }
 }
+
 
 </script>
 

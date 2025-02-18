@@ -403,7 +403,7 @@ body .about-text ul {
     box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
     transition: all .50s ease;
-    overflow: hidden;
+    overflow: visible;
     height: auto;
 }
 .main-row {
@@ -454,14 +454,65 @@ body .about-text ul {
 }
 
   
-.expandable-content {
-    display: none; /* Hidden by default */
-    
+/* Wrap each expandable section */
+.expand-container {
+    position: relative; /* This makes the absolute positioning of its children relative to this container */
+    z-index: 1000;
+    width: inherit;
+    min-width: 200px; /* Ensures it has some width */
+    /*left: 50%;  Adjust positioning */
+    /*transform: translateX(-50%);  Center it */
+    /* white-space: nowrap;  */
+    align-items: flex;
+    padding: 0%;
 }
-.expandable-content.show {
-    display: block;
-    max-height: 500px; /* Adjust as needed */
+  
+  /* Initially hide the expandable content */
+  .expandable-content {
+    position: absolute;
+    top: 100%;  /* Place it just below the trigger icon */
+    left: 0;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: #2d343f;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    box-shadow:   /* Right shadow */
+     0  5px 5px var(--main-color);  /* Bottom shadow */
+    padding: 20px;
+    z-index: 10;
+    visibility: visible;
   }
+  .row:hover .expandable-container {
+    opacity: 1;
+    visibility: visible;
+}
+  
+  /* When the 'show' class is added, reveal the content */
+  .expandable-content.show {
+    display: block;
+    opacity: 1;
+  }
+.parent-div {
+    overflow: visible;
+}
+  
+  /* Expand button styling */
+  .expand-btn {
+    cursor: pointer;
+    background: transparent !important;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate icon when active */
+  .expand-btn.active {
+    transform: rotate(180deg);
+  }
+  
 
 
 /* 
@@ -480,22 +531,7 @@ font-size: 14px;
 background-color: #0056b3;
 } */
  
-.expand-btn {
-    cursor: pointer;
-    color:var(--main-color);
-    font-size: 20px; /* Adjust size as needed */
-    transition: transform 0.3s ease; /* Smooth transition for rotation */
-    background-color: transparent !important;
-    padding: 0%;
-}
 
-.expand-btn.active {
-    transform: rotate(180deg) !important; /* Rotate icon when expanded */
-}
-
-.expand-btn:hover {
-    color:var(--main-color);
-}
 
 .contact-form {
     display: flex;
