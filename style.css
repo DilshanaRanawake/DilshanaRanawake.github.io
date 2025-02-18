@@ -18,6 +18,9 @@
 --h2-font:2.9rem;
 --p-font:1rem;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     color: var(--text-color);
     background: var(--bg-color);
@@ -465,6 +468,62 @@ body .about-text ul {
     transform: rotate(180deg);
 }
 
+.certificates{
+    margin: 0;
+}
+#certificates {
+    scroll-margin-top: 10px; /* Adjusts the scroll offset */
+}
+#certificates::before {
+    content: "";
+    display: block;
+    height: 100px; /* Offset for header or navbar */
+    margin-top: -100px; /* Pulls the section up */
+  }
+
+.certificates-content {
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 2.3rem;
+    margin: 4.2rem;
+    display: flex;
+    flex-direction: column;
+}
+.certificates-content ul li {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color); /* Adjust according to your theme */
+    background: #2d343f; /* Subtle background */
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(138, 81, 198, 0.3); /* Light glow effect */
+    transition: all 0.3s ease-in-out;
+}
+
+.certificates-content ul li a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Uses the default text color */
+}
+
+.certificates-content ul li:nth-child(odd) {
+    background: var(--bg-color); /* Blue */
+}
+
+.certificates-content ul li:nth-child(even) {
+    background: var(--second-bg-color); /* Purple */
+}
+
+/* Hover effect */
+.certificates-content ul li:hover {
+    color: var(--main-color);
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+
+
 .volunteer{
     background: var(--second-bg-color);
     margin: 0;
@@ -490,7 +549,6 @@ body .about-text ul {
     box-shadow: 0 0 5px rgba(138, 81, 198, 0.3); /* Light glow effect */
     transition: all 0.3s ease-in-out;
 }
-
 
 .volunteers-content ul li:nth-child(odd) {
     background: var(--bg-color); /* Blue */

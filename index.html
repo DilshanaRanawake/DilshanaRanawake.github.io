@@ -97,7 +97,7 @@
       <li>IJSE(Institute of Software Engineering) - Diploma in Comprehensive Master Java Developer, Software Engineering (Mar 2022 - Sep 2022)</li>
     </ul>
     <br>
-  <a href="#" class="btn">View My Certificates</a>
+    <a href="#certificates" class="btn" onclick="event.preventDefault(); scrollToCertificates()">View My Certificates</a>
 </div>
 
 </section>
@@ -259,11 +259,38 @@
       </div>
       <h4>Website Development</h4>
     </div> -->
+    <a href="#" class="btn">More Projects >></a>
   </div>
   
 </section>
 
 <!-- <section class="experience"></section> -->
+
+<section class="certificate" data-aos="zoom-in-up">
+  <div class="center-text" id="certificates" data-aos="fade-down">
+    <h2>My <span>Certificates</span> </h2>
+  </div>
+  <div class="certificates-content" data-aos="zoom-in-up">
+
+    <ul>
+      <li><a href="https://drive.google.com/file/d/1EiHhJMmeAnWBU6QT-bK2aSDVVMbnm8yG/view?usp=sharing" target="_blank">4th Undergraduate Research Symposium 2024 - University of Kelaniya</a></li>
+      <li><a href="https://drive.google.com/file/d/1dxR5GRx4hYIimr9EZdZC-CryjleXftmS/view?usp=drive_link" target="_blank">Diploma in Comprehensive Master Java Developer - IJSE</a></li>
+      <li><a href="https://drive.google.com/file/d/120EmrDSIgoxLNZYCvI67qJSu1jFunX8f/view" target="_blank">Certificate of Participation at HACKDOZE 1.0 Python Workshop & Hackathon - University of Ruhuna</a></li>
+      <li><a href="https://drive.google.com/file/d/14Du7NXhsdcXWvR0AG6-mx4ghKgBT5Ujg/view" target="_blank">Web Design for Beginners - Faculty of Information Technology, University of Moratuwa</a></li>
+      <li><a href="https://drive.google.com/file/d/1KwIYHE-La8xlaSvd0aqTH2KErdfxpSGK/view" target="_blank">Python for Beginners - Faculty of Computer Science & Engineering, University of Moratuwa</a></li>
+      <li><a href="https://drive.google.com/file/d/17iI0fojfFjvjZyMdkdtyzf_itwJe4rZ7/view?usp=sharing" target="_blank">Introduction to Artificial Intelligence - LinkedIn</a></li>
+      <li><a href="https://drive.google.com/file/d/1HMmo05U6a9mm9AIOYpNvVAEtbxRPKOnZ/view?usp=sharing" target="_blank">Introduction to Machine Learning - Great Learning</a></li>
+      <li><a href="https://drive.google.com/file/d/1bxkCb4sK_2MHz6GIYDt5quzQAVGCM9Bk/view?usp=sharing" target="_blank">Introduction to Neural Network - Great Learning</a></li>
+      <li><a href="https://drive.google.com/file/d/115h7QcnOOKVV_FLpl5Z0qDkKIb2SdsQd/view?usp=sharing" target="_blank">Applications of AI - Great Learning</a></li>
+      <li><a href="https://courses.cognitiveclass.ai/certificates/9e430a85eee44de2aff5bcde7f08f1f7" target="_blank">Python 101 for Data Science - Cognitive Class</a></li>
+      <li><a href="https://drive.google.com/file/d/1MHasXlVrnLF38_B2l9JSgjlLGxZx8VZi/view?usp=sharing" target="_blank">UI/UX for Beginners - Great Learning</a></li>
+      <li><a href="https://drive.google.com/file/d/1-lZpgyFf8VKQq5wKm8CEnZ9E895NN6fc/view?usp=sharing" target="_blank">HTML, CSS, Bootstrap - Certification Course for Beginners - YouAccel</a></li>
+      <li><a href="https://drive.google.com/file/d/19OTYi8hx5MEU1eIpTmxy_x2fnkYxgzLx/view?usp=sharing" target="_blank">Python Programming - From Basic to Advanced Level - Udemy</a></li>
+    </ul>
+    
+
+  </div>
+</section>
 
 <section class="volunteer" id="volunteers" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
@@ -368,8 +395,14 @@ duration:1400,
         button.classList.toggle('active'); // Rotate icon
     }
 }
-
-
+</script>
+<script>
+  function scrollToCertificates() {
+    const section = document.getElementById("certificates");
+    const offset = 250; // Adjust this value to set the scroll position
+    const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: sectionPosition, behavior: "smooth" });
+  }
 </script>
 
 </body>
