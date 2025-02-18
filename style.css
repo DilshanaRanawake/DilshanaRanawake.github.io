@@ -99,7 +99,7 @@ section {
 }
 
 .hero {
-    height: 50vh;
+    height: 100%;
     width: 100%;
     background: url(./img/background.png);
     background-size: cover;
@@ -124,6 +124,9 @@ section {
     color: var(--other-color);line-height: 30px;
     margin-bottom: 15px;
 
+}
+.main-content{
+    height:100%;
 }
 .profile {
     display: flex; /* Arrange text and image side by side */
@@ -229,7 +232,7 @@ header.sticky {
     background: var(--second-bg-color);
     display: grid;
     grid-template-columns: 2fr 4fr;
-    height: 70vh;
+    height: 100%;
     padding-top: 0%;
 }
 
@@ -248,6 +251,7 @@ header.sticky {
 .about-img-2 {
     width: 45%;
     height: 300px;
+    padding: auto;
     max-width: 250px;
     border-radius: 50%;
     overflow: hidden;
@@ -268,23 +272,28 @@ header.sticky {
     line-height: 1.3;
     margin-bottom: 12px;
 }
-.about-text ul{
+.about-text ul {
     list-style: disc !important;
     margin-left: 20px;
-    
+    text-align: left;
+    list-style-position: outside !important;
 }
+
 .about-text ul li {
-    display: list-item;
+    display: list-item; 
     color: var(--other-color);
     font-size: var(--font-size);
     line-height: 1.5;
+    margin-left: 0%;
 }
+
 body .about-text ul {
     list-style-type: disc !important;
 }
 
 
 .container {
+    height: 100%;
     width: 100%;
     margin: auto;
     padding: 20px;
@@ -365,7 +374,7 @@ body .about-text ul {
     padding: 20px;
     transition: all .50s ease;
     overflow: visible;
-    height: auto;
+    height: 100%;
 }
 .main-row {
     display: flex;
@@ -496,7 +505,7 @@ body .about-text ul {
   }
 
 .certificates-content {
-    height: auto;
+    height: 100%;
     align-items: center;
     justify-content: center;
     gap: 2.3rem;
@@ -544,7 +553,7 @@ body .about-text ul {
 }
 
 .volunteers-content {
-    height: auto;
+    height: 100%;
     align-items: center;
     justify-content: center;
     gap: 2.3rem;
@@ -704,7 +713,8 @@ color: var(--other-color);
     justify-content: center;
     background: #8a51c6;
     width: 45px;
-    height: 45px;border-radius: 50%;
+    height: 45px;
+    border-radius: 50%;
     color: var(--text-color);
     font-size: 27px;
 }
@@ -734,9 +744,6 @@ color: var(--other-color);
         width: 100%;
         object-fit: cover;
     }
-    .about {
-        height: 60vh;
-    }
 }
 
 @media(max-width:1380px) {
@@ -753,7 +760,6 @@ color: var(--other-color);
         padding: 18px 5%;
     }
     .hero {
-        height: 90vh;
         background-position: center;
     }
     
@@ -772,9 +778,6 @@ color: var(--other-color);
         width: 80%;
         font-size: 15px;
     }
-    .about {
-        height: 60vh;
-    }
 }
 @media (max-width:1290px){
     .box {
@@ -790,7 +793,6 @@ color: var(--other-color);
     }
     .box img {
         width: 100%;
-        height: 60px;
         max-width: 60px;
     }
     .image-container {
@@ -801,9 +803,6 @@ color: var(--other-color);
     }
     .main-content p {
         font-size: 18px;
-    }
-    .about {
-        height: 100vh;
     }
 }
 
@@ -889,9 +888,6 @@ color: var(--other-color);
     .text {
         width: 80%; 
     }
-    .about {
-        height: 150vh;
-    }
 }
 
 @media (max-width:470px) {
@@ -903,19 +899,10 @@ color: var(--other-color);
     .text {
         width: 80%; 
     }
-/* 
-    .image-container{
-        width: 80px;
-        height: 80px;
-    } */
     .main-content h4 {
         font-size: var(--h2-font);
         font-weight: 900;
         margin: 20px 0px 20px;
         line-height: 1.2;
-    }
-
-    .about {
-        height: 200vh;
     }
 }
