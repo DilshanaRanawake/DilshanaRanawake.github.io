@@ -462,7 +462,12 @@ body .about-text ul {
   
 /* Rotate icon when active */
 .expand-btn.active {
-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.volunteer{
+    background: var(--second-bg-color);
+    margin: 0;
 }
 
 .volunteers-content {
@@ -485,6 +490,7 @@ transform: rotate(180deg);
     box-shadow: 0 0 5px rgba(138, 81, 198, 0.3); /* Light glow effect */
     transition: all 0.3s ease-in-out;
 }
+
 
 .volunteers-content ul li:nth-child(odd) {
     background: var(--bg-color); /* Blue */
