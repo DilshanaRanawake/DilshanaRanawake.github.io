@@ -45,6 +45,14 @@ header {
     font-size: 36px;
     color: var(--text-color);
     font-weight: 600;
+    margin: 0px;
+}
+.header-name {
+    display: none; /* Initially hidden */
+    font-size: 20px;
+    color: var(--text-color);
+    border-left: 2px solid var(--main-color);
+    padding: 0px 0px 0px 10px;
 }
 span {
     color: var(--main-color);
@@ -60,9 +68,9 @@ span {
 }
 .navlist .nav-link {
     font-size: var(--p-font);
-    font-weight: 500;
+    font-weight: 400;
     color: var(--other-color);
-    margin-left: 40px;
+    margin-left: 20px;
     transition: all .30s ease;
 }
 
@@ -121,7 +129,8 @@ section {
     font-weight: 400;
     width: 620px;
     max-width: 100%;
-    color: var(--other-color);line-height: 30px;
+    color: var(--other-color);
+    line-height: 30px;
     margin-bottom: 15px;
 
 }
@@ -272,6 +281,9 @@ header.sticky {
     line-height: 1.3;
     margin-bottom: 12px;
 }
+.about-text p{
+    text-align: center;
+}
 .about-text ul {
     list-style: disc !important;
     margin-left: 20px;
@@ -308,6 +320,9 @@ body .about-text ul {
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
+}
+.techskills {
+    height: 100%;
 }
 .skills {
     background: var(--second-bg-color);
@@ -350,6 +365,9 @@ body .about-text ul {
 
 .projects {
     background: var(--second-bg-color);
+    height: 100%;    
+    overflow: visible;
+    margin: 20px;
 }
 .Projects-content {
     display: grid;
@@ -373,7 +391,6 @@ body .about-text ul {
     box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
     transition: all .50s ease;
-    overflow: visible;
     height: 100%;
 }
 .main-row {
@@ -493,21 +510,13 @@ body .about-text ul {
 
 .certificates{
     margin: 0;
+    height: 100%;
 }
-#certificates {
-    scroll-margin-top: 10px; /* Adjusts the scroll offset */
-}
-#certificates::before {
-    content: "";
-    display: block;
-    height: 100px; /* Offset for header or navbar */
-    margin-top: -100px; /* Pulls the section up */
-  }
+
 
 .certificates-content {
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    padding-left: 50px;
     gap: 2.3rem;
     margin: 4.2rem;
     display: flex;
@@ -545,11 +554,11 @@ body .about-text ul {
     box-shadow: 0 0 10px var(--main-color);
 }
 
-
-
 .volunteer{
     background: var(--second-bg-color);
     margin: 0;
+    height: 100%;
+    overflow: visible;
 }
 
 .volunteers-content {
@@ -645,7 +654,10 @@ body .about-text ul {
 } */
 
 
-
+.contact{
+    height: 100%;
+    overflow: visible;
+}
 
 .contact-form {
     display: flex;
