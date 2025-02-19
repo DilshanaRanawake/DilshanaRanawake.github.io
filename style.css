@@ -103,7 +103,7 @@ span {
     transform: scale(1.1);
 }
 section {
-    padding: 110px 16% 90px;
+    width: 100%;
 }
 
 .hero {
@@ -347,7 +347,7 @@ body .about-text ul {
 .about-text p{
     font-size: var(--p-font);
     font-weight: 400;
-    width: auto;
+    width: 100%;
     max-width: 100%;
     color: var(--other-color);
     line-height: 30px;
@@ -376,6 +376,7 @@ body .about-text ul {
     gap: 2.3rem;
     margin-top: 4.2rem;
     align-items: stretch;
+    width: 100%;
 }
 .row img {
     width: 100%;
@@ -390,8 +391,10 @@ body .about-text ul {
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
+    margin-right: 20px;
     transition: all .50s ease;
     height: 100%;
+    width: 100%;
 }
 .main-row {
     display: flex;
@@ -502,7 +505,7 @@ body .about-text ul {
 }
 
 .Projects-content .btn {
-    margin: 30px auto; /* Center horizontally */
+   /* Center horizontally */
     display: block;    /* Centering requires block display */
     width: fit-content; /* Fit button to content size */
     height: fit-content;
@@ -511,16 +514,17 @@ body .about-text ul {
 .certificates{
     margin: 0;
     height: 100%;
+    width: 100%;
+    align-items: center;
 }
 
 
 .certificates-content {
-    align-items: right;
     padding-left: 50px;
     gap: 2.3rem;
-    margin: 4.2rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .certificates-content ul li {
     font-size: 16px;
@@ -559,16 +563,17 @@ body .about-text ul {
     margin: 0;
     height: 100%;
     overflow: visible;
+    width: 100%;
+    height: 100%;
 }
 
 .volunteers-content {
-    height: 100%;
-    align-items: center;
     justify-content: center;
     gap: 2.3rem;
-    margin: 4.2rem;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    padding: 20px;
 }
 .volunteers-content ul li {
     font-size: 16px;
