@@ -443,6 +443,12 @@ duration:1400,
 
     sections.forEach(section => observer.observe(section));
 });
+function scrollToCertificates() {
+    const section = document.getElementById("certificates");
+    const offset = 250; // Adjust this value to set the scroll position
+    const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: sectionPosition, behavior: "smooth" });
+  }
 
 window.addEventListener("scroll", function () {
     let logo = document.querySelector(".logo");
