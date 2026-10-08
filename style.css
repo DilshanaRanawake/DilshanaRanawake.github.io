@@ -1254,3 +1254,35 @@ img { max-width: 100%; }
   .main-content { flex: none; }
   .hero-visual { flex: none; width: 100%; height: 340px; }
 }
+/* ===== About: neural network background ===== */
+.about { position: relative; overflow: hidden; }
+#neural-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.about-img, .about-text { position: relative; z-index: 1; }
+ 
+@media (max-width: 680px) {
+  #neural-canvas { opacity: 0.28; }
+}
+/* ===== Hero: faint particle background (behind text and hand) ===== */
+.hero { position: relative; overflow: hidden; }
+#hero-bg-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+  /* fades out behind the text on the left so words always win */
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,.25) 0%, rgba(0,0,0,1) 75%);
+          mask-image: linear-gradient(to right, rgba(0,0,0,.25) 0%, rgba(0,0,0,1) 75%);
+}
+.hero .main-content, .hero .hero-visual { position: relative; z-index: 1; }
+ 
+@media (max-width: 950px) {
+  #hero-bg-canvas { opacity: 0.6; -webkit-mask-image: none; mask-image: none; }
+}
+ 
