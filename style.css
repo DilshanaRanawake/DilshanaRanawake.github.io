@@ -9,11 +9,13 @@
 }
 :root {
 --text-color:#fff;
---bg-color:#1b1f24;
---second-bg-color:#22282f;
---main-color:#8a51c6;
---other-color:#c3cad5;
-
+--bg-color:#0b1220;
+--second-bg-color:#111a2e;
+--main-color:#2dd4bf;
+--other-color:#b6c2d6;
+--card-color:#172036;
+--main-rgb:45, 212, 191;
+--hero-bg:linear-gradient(135deg, #0b1220 0%, #111a2e 100%);
 --h1-font:4.5rem;
 --h2-font:2.9rem;
 --p-font:1rem;
@@ -387,7 +389,7 @@ body .about-text ul {
     object-fit: cover;
 }
 .row {
-    background: #2d343f;
+    background: (--card-color);
     border-radius: 28px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
@@ -423,7 +425,7 @@ body .about-text ul {
     font-size: 27px;
     border-radius: 50%;
     color: var(--text-color);
-    background: #8a51c6;
+    background: var(--main-color);;
     position: relative;
 }
 .row h4 {
@@ -469,7 +471,7 @@ body .about-text ul {
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
-    background: #2d343f;
+    background: #172036;
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
     box-shadow:   /* Right shadow */
@@ -531,11 +533,11 @@ body .about-text ul {
     font-size: 16px;
     font-weight: 400;
     color: var(--text-color);
-    background: #2d343f; /* Subtle background */
+    background: #172036; /* Subtle background */
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(138, 81, 198, 0.3); /* Light glow effect */
+    box-shadow: 0 0 5px rgba(var(--main-rgb), 0.3); /* Light glow effect */
     transition: all 0.3s ease-in-out;
 }
 
@@ -580,11 +582,11 @@ body .about-text ul {
     font-size: 16px;
     font-weight: 400;
     color: var(--text-color);
-    background: #2d343f; /* Subtle background */
+    background: #172036; /* Subtle background */
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(138, 81, 198, 0.3); /* Light glow effect */
+    box-shadow: 0 0 5px rgba(var(--main-rgb), 0.3); /* Light glow effect */
     transition: all 0.3s ease-in-out;
 }
 
@@ -613,7 +615,7 @@ body .about-text ul {
 }
 .box {
     padding: 80px 40px 66px;
-    background: #2d343f;
+    background: #172036;
     border-radius: 28px;
     border: 1px solid transparent;
     box-shadow:  0 0 5px var(--main-color);
@@ -682,7 +684,7 @@ form textarea {
     border: none;
     outline: none;
     box-shadow: 0 0 5px var(--main-color);
-    background: #2d343f;
+    background: #172036;
     color: var(--text-color);
     margin-bottom: 20px;
     border-radius: 8px;
@@ -711,7 +713,8 @@ form .send-btn:hover {
     cursor: pointer;
 }
 
-
+/* white icon text on bright teal is hard to read */
+.row i, .scroll-top i { color: var(--bg-color); }
 .footer {
     padding: 22px 16%;
     background:var(--second-bg-color) ;
@@ -729,13 +732,106 @@ color: var(--other-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #8a51c6;
+    background: var(--main-color);
     width: 45px;
     height: 45px;
     border-radius: 50%;
     color: var(--text-color);
     font-size: 27px;
 }
+/* Append this to the bottom of your existing style.css */
+
+/* Experience section */
+.experience {
+    background: var(--second-bg-color);
+    height: 100%;
+}
+.experience-content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.job {
+    background: #172036;
+    border-radius: 28px;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 28px 32px;
+    transition: all .5s ease;
+}
+.job:hover {
+    box-shadow: 0 0 20px var(--main-color);
+}
+.job h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+.job-meta {
+    color: var(--other-color);
+    margin-bottom: 14px;
+}
+.job-meta b,
+.job-stack b {
+    color: var(--main-color);
+}
+.job ul {
+    margin-left: 20px;
+    color: var(--other-color);
+    line-height: 1.7;
+}
+.job-stack {
+    margin-top: 14px;
+    color: var(--other-color);
+}
+
+/* Project cards without a screenshot keep a consistent height */
+.row .main-row:first-child {
+    margin-top: 6px;
+}
+.cv-note { font-size: 13px !important; margin: 12px 0 0 !important; }
+.modal { position: fixed; inset: 0; background: rgba(5,10,20,.75); display: none;
+         align-items: center; justify-content: center; z-index: 20000; padding: 20px; }
+.modal.show { display: flex; }
+.modal-box { position: relative; width: 480px; max-width: 100%; background: var(--second-bg-color);
+             border-radius: 20px; padding: 32px; box-shadow: 0 0 25px var(--main-color); }
+.modal-box h3 { font-size: 24px; margin-bottom: 8px; }
+.modal-box p { color: var(--other-color); margin-bottom: 20px; line-height: 1.6; }
+.modal-close { position: absolute; top: 12px; right: 18px; background: none; border: none;
+               color: var(--other-color); font-size: 28px; cursor: pointer; }
+.modal-box input, .modal-box textarea { margin-bottom: 14px; }
+.modal-box .send-btn { width: auto; }
+
+/* Light theme */
+:root[data-theme="light"] {
+  --text-color:#0f172a;
+  --bg-color:#ffffff;
+  --second-bg-color:#f1f5f9;
+  --card-color:#ffffff;
+  --main-color:#141a95;
+  --main-rgb:65, 105, 225;
+  --other-color:#475569;
+  --hero-bg:linear-gradient(135deg, #ffffff 0%, #e8eefc 100%);
+}
+
+.hero { background: var(--hero-bg); }
+.row i, .scroll-top i { color: var(--bg-color); }
+
+body, header.sticky, .row, .job, .about, .skills, .projects, .experience, .volunteer {
+  transition: background-color .3s ease, color .3s ease;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 16px;
+  transition: all .3s ease;
+}
+.theme-toggle:hover { background: var(--main-color); color: var(--bg-color); }
 
 /* Responsive adjustments */
 @media screen and (min-width: 1700px) {
@@ -960,4 +1056,30 @@ color: var(--other-color);
         margin: 20px 0px 20px;
         line-height: 1.2;
     }
+}
+/* Theme fixes: cards, inputs, accent circles */
+:root,
+:root[data-theme="dark"] {
+  --card-color:#172036;
+  --main-rgb:45, 212, 191;
+  --hero-bg:linear-gradient(135deg, #0b1220 0%, #111a2e 100%);
+}
+
+.row,
+.job,
+.expandable-content,
+form input,
+form textarea {
+  background: var(--card-color);
+}
+
+.row i,
+.scroll-top i {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.certificates-content ul li,
+.volunteers-content ul li {
+  box-shadow: 0 0 5px rgba(var(--main-rgb), 0.3);
 }

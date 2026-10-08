@@ -3,50 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- #CSS -->
+    <title>Dilshana Ranawake | AI/ML & Software Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <!-- #box icon -->
-  <link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <!--remox icon-->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function(){
-        emailjs.init({
-          publicKey: "P3QF18Dw54lvVFXWO",
-        });
-    })();
-  </script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function(){ emailjs.init({ publicKey: "P3QF18Dw54lvVFXWO" }); })();
+    </script>
 </head>
 <body>
-    
 
 <header>
-  <a href="#" class="logo">Software <span>Engineering</span> <h6>Intern</h6></a>
-  <span class="header-name">Dilshana Ranawake</span> <!-- Name element -->
+  <a href="#" class="logo">AI/ML <span>Engineering</span> / Software <span>Engineering</span></a>
+  <span class="header-name">Dilshana Ranawake</span>
   <ul class="navlist">
     <li><a href="#home" class="nav-link">Home</a></li>
     <li><a href="#about" class="nav-link">About</a></li>
     <li><a href="#techskills" class="nav-link">Skills</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
     <li><a href="#projects" class="nav-link">Projects</a></li>
     <li><a href="#certificates" class="nav-link">Certificates</a></li>
     <li><a href="#volunteers" class="nav-link">Volunteering</a></li>
     <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme"><i class="fa-solid fa-sun"></i></button>
   <div class="bx bx-menu" id="menu-icon"></div>
-<!-- <div class="top-btnn">
-  <a href="#" class="h-btn">Contact me</a>
-</div> -->
-
 </header>
-
 
 <section class="hero" id="home">
 <div class="main-content" data-aos="zoom-in-up">
@@ -57,244 +43,267 @@
       <h4>I'm <span>Dilshana Ranawake</span></h4>
     </div>
     <div class="image-container" data-aos="zoom-in-down">
-        <img src="images\DilPic.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="images/DilPic.jpg" alt="Profile Picture" class="profile-pic">
     </div>
   </div>
-  <p>A Computer Science undergraduate specializing in Artificial Intelligence. <br>I’m passionate about creating innovative solutions that solve real-world challenges and continuously improving my skills in programming, web development, and AI.</p>
-  
+  <p>A Computer Science (Hons) graduand specializing in Artificial Intelligence.<br>I build machine learning systems, computer vision models and full-stack applications, and I'm moving from web development into AI/ML engineering.</p>
+
   <span>Connect with me</span>
   <br><br>
   <div class="social">
-    <a href="https://www.linkedin.com/in/dilshana-ranawake/" target="_blank">
-      <i class="ri-linkedin-fill"></i>
-    </a>
-    <a href="https://github.com/DilshanaRanawake" target="_blank">
-      <i class="ri-github-fill"></i>
-    </a>
-    <a href="https://www.hackerrank.com/shimmer001" target="_blank">
-      <i class="fa-brands fa-hackerrank"></i>
-    </a>
-    <!-- <form onsubmit="window.location.href='mailto:dilshanaranawake@gmail.com?subject=' + encodeURIComponent(document.getElementById('subject').value) + '&body=' + encodeURIComponent(document.getElementById('message').value); return false;">
-      <input type="text" id="subject" placeholder="Subject" required>
-      <textarea id="message" placeholder="Your message" required></textarea>
-      <button type="submit">Send</button>
-    </form> -->
+    <a href="https://www.linkedin.com/in/dilshana-ranawake/" target="_blank"><i class="ri-linkedin-fill"></i></a>
+    <a href="https://github.com/DilshanaRanawake" target="_blank"><i class="ri-github-fill"></i></a>
+    <a href="https://www.hackerrank.com/shimmer001" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
   </div>
-<!-- <div class="main-btn">
-  <a href="#" class="btn">Hire me</a>
-  <a href="#" class="btn btn2">Download CV</a>
-</div> -->
-
+  <div class="main-btn">
+    <button type="button" class="btn" id="cv-open">Request my CV</button>
+    <p class="cv-note">My CV includes personal contact details, so I share it on request.</p>
+  </div>
 </div>
-
 </section>
 
 <section class="about" id="about" data-aos="zoom-in-up">
-  <div class="about-img" >
-    <div class="about-img-1">
-      <img src="images\img1.jpg" alt="Image 1">
-    </div>
-    <div class="about-img-2">
-      <img src="images\img2.jpg" alt="Image 2">
-    </div>
+  <div class="about-img">
+    <div class="about-img-1"><img src="images/img1.jpg" alt="Image 1"></div>
+    <div class="about-img-2"><img src="images/img2.jpg" alt="Image 2"></div>
   </div>
-  <div class="about-text" >
+  <div class="about-text">
     <h2><span>Professional Summary</span></h2>
-    <p>I am a highly motivated Software Engineering enthusiast with a solid foundation in web development and a growing interest in Artificial Intelligence. With hands-on experience in designing, developing applications, I am eager to apply my technical skills in a real-world environment. As I continue my studies at the University of Kelaniya, I aim to bridge the gap between academic knowledge and industry practices, contributing to impactful and innovative software solutions.</p>
+    <p>I'm a Computer Science (Hons) graduand specializing in AI, with all coursework and examinations completed and degree conferral pending (expected 2027). My honours thesis covers multimodal deep learning for real-time gesture recognition, from model design through edge deployment and robotics integration.</p>
     <br>
-    <p>I am actively seeking a Software Engineering Internship opportunity where I can further develop my skills, collaborate with experienced professionals, and contribute to innovative projects.</p>
+    <p>I also have six months of industry experience as a full-stack engineering intern, and two manuscripts under peer review at IEEE-affiliated conferences. I'm now building skills in RAG, agentic frameworks (LangChain, LangGraph, AutoGen) and cloud MLOps, and I'm looking for AI/ML engineering opportunities.</p>
     <br><br><h2><span>Education</span></h2>
     <ul>
-      <li>BSc. Honours in Computer Science, University of Kelaniya, Sri Lanka (Expected Graduation: 2026)</li>
-      <li>IJSE(Institute of Software Engineering) - Diploma in Comprehensive Master Java Developer, Software Engineering (Mar 2022 - Sep 2022)</li>
+      <li>BSc. (Hons) Computer Science, Specialization in Artificial Intelligence, University of Kelaniya, Sri Lanka (Coursework complete, degree conferral pending: expected 2027). GPA: 3.51/4.0</li>
+      <li>IJSE (Institute of Software Engineering): Diploma in Comprehensive Master Java Developer (Mar 2022 - Sep 2022)</li>
     </ul>
     <br>
     <a href="#certificates" class="btn" onclick="event.preventDefault(); scrollToCertificates()">View My Certificates</a>
 </div>
-
 </section>
+
 <section class="techskills" id="techskills" data-aos="zoom-in-up">
   <div class="container">
     <h2><span>🚀 Technologies & Tools</span></h2>
+
+    <div class="category">🧠 Machine Learning & Deep Learning</div>
+    <div class="skills">
+        <div class="skill"><i class="fas fa-brain"></i> TensorFlow / Keras</div>
+        <div class="skill"><i class="fas fa-brain"></i> PyTorch</div>
+        <div class="skill"><i class="fas fa-chart-line"></i> scikit-learn</div>
+        <div class="skill"><i class="fas fa-robot"></i> Hugging Face Transformers</div>
+        <div class="skill"><i class="fas fa-eye"></i> OpenCV</div>
+        <div class="skill"><i class="fas fa-hand-paper"></i> MediaPipe</div>
+        <div class="skill"><i class="fas fa-compress"></i> Quantization & Pruning</div>
+        <div class="skill"><i class="fas fa-microchip"></i> TensorFlow Lite</div>
+    </div>
+
+    <div class="category">🤖 AI Frameworks & Robotics</div>
+    <div class="skills">
+        <div class="skill"><i class="fas fa-link"></i> LangChain</div>
+        <div class="skill"><i class="fas fa-project-diagram"></i> LangGraph</div>
+        <div class="skill"><i class="fas fa-users-cog"></i> AutoGen</div>
+        <div class="skill"><i class="fas fa-search"></i> RAG Systems</div>
+        <div class="skill"><i class="fas fa-plug"></i> MCP</div>
+        <div class="skill"><i class="fas fa-robot"></i> ROS2</div>
+        <div class="skill"><i class="fas fa-cube"></i> Gazebo</div>
+        <div class="skill"><i class="fas fa-microchip"></i> Raspberry Pi</div>
+    </div>
+
+    <div class="category">💬 Languages</div>
+    <div class="skills">
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript / TypeScript</div>
+        <div class="skill"><i class="fab fa-java"></i> Java</div>
+        <div class="skill"><i class="fas fa-code"></i> Dart</div>
+        <div class="skill"><i class="fas fa-code"></i> C</div>
+        <div class="skill"><i class="fas fa-code"></i> C#</div>
+        <div class="skill"><i class="fab fa-php"></i> PHP</div>
+    </div>
 
     <div class="category">🎨 Front-End Development</div>
     <div class="skills">
         <div class="skill"><i class="fab fa-html5"></i> HTML</div>
         <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
-        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
         <div class="skill"><i class="fab fa-react"></i> React</div>
         <div class="skill"><i class="fab fa-angular"></i> Angular</div>
         <div class="skill"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i> Flutter</div>
     </div>
 
-    <div class="category">⚙️ Back-End Development</div>
+    <div class="category">⚙️ Back-End & Databases</div>
     <div class="skills">
-        <div class="skill"><i class="fab fa-java"></i> Java</div>
-        <div class="skill"><i class="fab fa-python"></i> Python</div>
-        <div class="skill"><i class="fab fa-php"></i> PHP</div>
-        <div class="skill"><i class="fas fa-server"></i> Node.js</div>
-        <div class="skill"><i class="fas fa-cogs"></i> Spring</div>
-        <!-- <div class="skill"><i class="fas fa-code"></i> Django</div> -->
-    </div>
-
-    <div class="category">🗄️ Databases</div>
-    <div class="skills">
+        <div class="skill"><i class="fas fa-server"></i> Node.js / Express</div>
+        <div class="skill"><i class="fas fa-cogs"></i> Spring Boot</div>
+        <div class="skill"><i class="fas fa-bolt"></i> FastAPI</div>
+        <div class="skill"><i class="fas fa-network-wired"></i> REST APIs</div>
         <div class="skill"><i class="fas fa-database"></i> MySQL</div>
         <div class="skill"><i class="fas fa-database"></i> PostgreSQL</div>
         <div class="skill"><i class="fas fa-database"></i> MongoDB</div>
     </div>
 
-    <div class="category">🛠️ Tools & Technologies</div>
+    <div class="category">🛠️ Tools & Cloud</div>
     <div class="skills">
         <div class="skill"><i class="fab fa-git"></i> Git</div>
         <div class="skill"><i class="fab fa-github"></i> GitHub</div>
         <div class="skill"><i class="fas fa-vial"></i> Postman</div>
-        <!-- <div class="skill"><i class="fab fa-docker"></i> Docker</div> -->
-        <div class="skill"><i class="fas fa-network-wired"></i> REST APIs</div>
+        <div class="skill"><i class="fas fa-book"></i> Jupyter</div>
+        <div class="skill"><i class="fab fa-aws"></i> AWS (learning)</div>
+        <div class="skill"><i class="fab fa-docker"></i> Docker (learning)</div>
+        <div class="skill"><i class="fab fa-microsoft"></i> Azure MLOps (learning)</div>
     </div>
-<!-- 
-    <div class="category">🌐 Other Technologies</div>
-    <div class="skills">
-        <div class="skill"><i class="fas fa-code"></i> Data Structures & Algorithms</div>
-        <div class="skill"><i class="fas fa-laptop-code"></i> Agile Development</div>
-        <div class="skill"><i class="fas fa-user-shield"></i> JWT Authentication</div>
-        <div class="skill"><i class="fas fa-cloud"></i> Firebase</div>
-    </div> -->
-
-</div>
-
-
+  </div>
 </section>
 
+<section class="experience" id="experience" data-aos="zoom-in-up">
+  <div class="center-text" data-aos="fade-down">
+    <h2>Work <span>Experience</span></h2>
+  </div>
+  <div class="experience-content">
+    <div class="job">
+      <h3>Full-Stack Software Engineering Intern</h3>
+      <p class="job-meta"><b>CeylonX Corporation (Pvt) Ltd</b>, Colombo &nbsp;|&nbsp; Aug 2025 – Feb 2026</p>
+      <ul>
+        <li>Contributed to the full-stack rebuild of a production CRM system (React 19, Node.js/Express, MySQL).</li>
+        <li>Built JWT authentication with role-based access control, multi-step registration workflows, job/shift scheduling and payroll automation with tax calculations.</li>
+        <li>Integrated AWS Rekognition for face-recognition employee check-in; built reusable audit-logging and email templating systems.</li>
+        <li>Mentored 2 junior developers on code quality, consistency and best practices.</li>
+        <li>Joined client requirement sessions and led the final handover documentation.</li>
+      </ul>
+      <p class="job-stack"><b>Tech stack:</b> React, Node.js, Express, MySQL 8, AWS, REST APIs</p>
+    </div>
+  </div>
+</section>
 
 <section class="Projects" id="projects" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
     <h2>My <span>Projects</span></h2>
   </div>
-  
+
   <div class="Projects-content" data-aos="zoom-in-up">
-    
+
+    <!-- NEW: add a screenshot to images/ and an <img> tag at the top of these two cards if you like -->
     <div class="row">
-      <img src="images/taskmateprjct.png" alt="">
       <div class="main-row">
         <div class="row-text">
-          <h4>Task Management System</h4>
+          <h4>Multimodal Hand Gesture Recognition</h4>
         </div>
-        <a href="https://github.com/DilshanaRanawake/Task-management-system" target="_blank" style="text-decoration: none; color: inherit;">
-          <div class="row-icon">
-            <i class="ri-github-fill"></i>
-          </div>
-        </a>
       </div>
-      <h5>A web-based Task Management System built with <b>PHP, MySQL, HTML, CSS,</b> and <b>JavaScript</b> featuring user authentication, role-based access, and task management</h5>
+      <h5>Honours research project on multimodal gesture recognition, combining <b>RGB image features</b> with <b>skeletal hand landmarks</b> for real-time sign classification. Optimized for edge devices and integrated with <b>ROS2</b> for gesture-based robot control in simulation. Manuscripts under peer review.</h5>
     </div>
-    
+
     <div class="row">
-      <img src="images/prologProject.png" alt="">
       <div class="main-row">
         <div class="row-text">
-          <h4>Prolog Disease-Diagnosis-System</h4>
+          <h4>Agent & RAG Systems for Research Q&A</h4>
         </div>
-        <a href="https://github.com/DilshanaRanawake/Prolog-Disease-Diagnosis-System" target="_blank" style="text-decoration: none; color: inherit;">
-          <div class="row-icon">
-            <i class="ri-github-fill"></i>
-          </div>
+        <!-- Add your repo URL below -->
+        <a href="https://github.com/DilshanaRanawake?tab=repositories" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
         </a>
       </div>
-      <h5>A simple expert system in <b>Prolog</b> for diagnosing common diseases based on symptoms.</h5>
+      <h5><b>Python, LangGraph, ChromaDB, MCP.</b> An MCP server lets Claude Desktop search my own papers, backed by a 12-case eval suite with CI. Includes a LangGraph agent that decides when to search again, a parallel searcher/analyst/writer pipeline (1.21x faster), and a static vs live-web RAG comparison on 10 questions.</h5>
     </div>
-  
+
     <div class="row row_3">
       <img src="images/smartdengueprjct.jpeg" alt="">
       <div class="main-row">
         <div class="row-text">
-          <h4>Smart dengue Alert</h4>
+          <h4>SmartDengue Alert</h4>
         </div>
         <a href="https://github.com/SmartDengueAlert" target="_blank" style="text-decoration: none; color: inherit;">
-        <div class="row-icon">
-          <i class="ri-github-fill"></i>
-        </div>
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
         </a>
       </div>
-      <h5>A mobile application designed to predict and prevent Dengue outbreaks in the Colombo district using machine learning and real-time data. <br></h5>
-      <!-- <button class="expand-btn" onclick="toggleExpand(this)">Read More</button> -->
+      <h5>A cross-platform mobile app that predicts Dengue outbreaks in the Colombo district using machine learning and real-time weather data. Presented at the 4th Undergraduate Research Symposium 2024.</h5>
       <div class="expand-container">
         <i class="fa-solid fa-angle-down expand-btn" onclick="toggleExpand(this)"></i>
         <div class="expandable-content">
-          <h5>- As the team leader, I guided the development of the project, overseeing the frontend <b>(Flutter)</b>, backend <b>(Node.js, MongoDB)</b>, and machine learning model <b>(Python, Flask)</b>.<br><br>
-            - We evaluated multiple machine learning models, including <b>Random Forest</b>, <b>Neural Network</b>, and <b>Gradient Boosting</b>. The <b>Neural Network</b> model achieved the highest accuracy of <b>87.11%</b>, significantly improving prediction reliability.
-            <br><br>- We ensured all parts were cohesive, providing early warnings and preventive measures to help communities stay informed and reduce the impact of Dengue through timely alerts and actionable insights.
+          <h5>- As team leader, I guided the frontend <b>(Flutter)</b>, backend <b>(Node.js, MongoDB)</b> and ML model <b>(Python, Flask)</b>.<br><br>
+            - We compared <b>Random Forest</b>, <b>Neural Network</b> and <b>Gradient Boosting</b> models. The <b>Neural Network</b> reached the highest accuracy of <b>87.11%</b>.
+            <br><br>- The parts work together to give communities early warnings and preventive guidance.
           </h5>
         </div>
       </div>
     </div>
-    
+
+    <div class="row">
+      <img src="images/taskmateprjct.png" alt="">
+      <div class="main-row">
+        <div class="row-text"><h4>Task Management System</h4></div>
+        <a href="https://github.com/DilshanaRanawake/Task-management-system" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
+        </a>
+      </div>
+      <h5>A web-based Task Management System built with <b>PHP, MySQL, HTML, CSS,</b> and <b>JavaScript</b> featuring user authentication, role-based access, and task management.</h5>
+      <a href="https://taskmate.infinityfreeapp.com" target="_blank" style="text-decoration: none; color: inherit; display: inline-block; margin-top: 8px;">
+        <div class="row-icon"><i class="ri-external-link-line"></i></div>
+      </a>
+    </div>
+
+    <div class="row">
+      <img src="images/prologProject.png" alt="">
+      <div class="main-row">
+        <div class="row-text"><h4>Prolog Disease-Diagnosis-System</h4></div>
+        <a href="https://github.com/DilshanaRanawake/Prolog-Disease-Diagnosis-System" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
+        </a>
+      </div>
+      <h5>A simple expert system in <b>Prolog</b> for diagnosing common diseases based on symptoms.</h5>
+    </div>
+
     <div class="row">
       <img src="images/shoppingsiteprjct.png" alt="">
       <div class="main-row">
-        <div class="row-text">
-          <h4>Replica of Bloomingdale's website</h4>
-        </div>
-        <a href="" target="_blank" style="text-decoration: none; color: inherit;">
-          <div class="row-icon">
-            <i class="ri-github-fill"></i>
-          </div>
-        </a>
+        <div class="row-text"><h4>Full-Stack E-Commerce Platform</h4></div>
+        <!-- Add the repo URL here; the empty link was removed so the icon doesn't point nowhere -->
       </div>
-      <h5>A full-stack replica of Bloomingdale's e-commerce site using <b>Angular</b> and <b>Spring Boot</b> with <b>MySQL</b>, featuring authentication, product browsing, and order management.</h5>
+      <h5>A Bloomingdale's-style e-commerce site using <b>Angular</b> and <b>Spring Boot</b> with <b>MySQL</b>, featuring authentication, product browsing, and order management.</h5>
     </div>
-    
+
     <div class="row">
       <img src="images/qmsprjct.png" alt="">
       <div class="main-row">
-        <div class="row-text">
-          <h4>Exam Management System</h4>
-        </div>
+        <div class="row-text"><h4>Exam Management System</h4></div>
         <a href="https://github.com/DilshanaRanawake/ExamManagementSystem" target="_blank" style="text-decoration: none; color: inherit;">
-          <div class="row-icon">
-            <i class="ri-github-fill"></i>
-          </div>
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
         </a>
       </div>
       <h5><b>C#</b> Exam Management System for students to take exams, with admin controls for managing candidates, subjects, questions, and viewing results.</h5>
     </div>
-    
-    <!-- <div class="row">
-      <img src="./img/port-6.jpg" alt="">
+
+    <div class="row">
+      <img src="images/flower-shop.png" alt="">
       <div class="main-row">
-        <div class="row-text">
-          <h5>Website Design</h5>
-        </div>
-        <div class="row-icon">
-  <i class="ri-github-fill"></i>
-        </div>
+        <div class="row-text"><h4>Flower Shop Website</h4></div>
+        <a href="https://github.com/DilshanaRanawake/Flower-Shop-Website" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
+        </a>
       </div>
-      <h4>Website Development</h4>
-    </div> -->
+      <h5>Responsive flower shop website built with HTML5 and CSS3, featuring Home, About, Products, Reviews, and Contact sections.</h5>
+      <a href="https://flower-shop-website-mu.vercel.app/" target="_blank" style="text-decoration: none; color: inherit; display: inline-block; margin-top: 8px;">
+        <div class="row-icon"><i class="ri-external-link-line"></i></div>
+      </a>
+    </div>
+
     <a href="https://github.com/DilshanaRanawake?tab=repositories" class="btn">More Projects >></a>
   </div>
-  
 </section>
 
-<!-- <section class="experience"></section> -->
-
-<section class="certificate"  id="certificates" data-aos="zoom-in-up">
+<section class="certificate" id="certificates" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
-    <h2>📜 Certifications <span>& </span>Achievements </h2>
+    <h2>📜 Publications, Certifications <span>&</span> Achievements</h2>
   </div>
   <div class="certificates-content" data-aos="zoom-in-up">
-    <h3>🎓 Academic & Research</h3>
+    <h3>📄 Publications & Manuscripts Under Review</h3>
     <ul>
-      <li><a href="https://drive.google.com/file/d/1dxR5GRx4hYIimr9EZdZC-CryjleXftmS/view?usp=drive_link" target="_blank">Diploma in Comprehensive Master Java Developer - IJSE</a></li>
-      <li><a href="https://drive.google.com/file/d/1EiHhJMmeAnWBU6QT-bK2aSDVVMbnm8yG/view?usp=sharing" target="_blank">4th Undergraduate Research Symposium 2024 - University of Kelaniya (Presenter & Authour)</a></li>
+      <li>Two manuscripts under peer review at IEEE-affiliated international conferences (titles withheld until acceptance)</li>
+      <li><a href="https://drive.google.com/file/d/1EiHhJMmeAnWBU6QT-bK2aSDVVMbnm8yG/view?usp=sharing" target="_blank">SmartDengue Alert: Predicting Dengue Outbreaks Using Machine Learning - 4th Undergraduate Research Symposium 2024, University of Kelaniya (Presenter & Author; abstract published in Faculty Research Booklet, p. 25)</a></li>
     </ul>
 
-    <h3>💻 Programming & Software Development</h3>
+    <h3>🎓 Academic</h3>
     <ul>
-      <li><a href="https://drive.google.com/file/d/1KwIYHE-La8xlaSvd0aqTH2KErdfxpSGK/view?usp=sharing" target="_blank">Python for Beginners - Faculty of Computer Science & Engineering, University of Moratuwa</a></li>
-      <li><a href="https://drive.google.com/file/d/19OTYi8hx5MEU1eIpTmxy_x2fnkYxgzLx/view?usp=sharing" target="_blank">Python Programming - From Basic to Advanced Level - Udemy</a></li>
-      <li><a href="https://courses.cognitiveclass.ai/certificates/9e430a85eee44de2aff5bcde7f08f1f7" target="_blank">Python 101 for Data Science - Cognitive Class</a></li>
-      <li><a href="https://drive.google.com/file/d/1-lZpgyFf8VKQq5wKm8CEnZ9E895NN6fc/view?usp=sharing" target="_blank">HTML, CSS, Bootstrap - Certification Course for Beginners - YouAccel</a></li>
+      <li><a href="https://drive.google.com/file/d/1dxR5GRx4hYIimr9EZdZC-CryjleXftmS/view?usp=drive_link" target="_blank">Diploma in Comprehensive Master Java Developer - IJSE</a></li>
     </ul>
 
     <h3>🖥️ AI & Machine Learning</h3>
@@ -305,83 +314,49 @@
       <li><a href="https://drive.google.com/file/d/115h7QcnOOKVV_FLpl5Z0qDkKIb2SdsQd/view?usp=sharing" target="_blank">Applications of AI - Great Learning</a></li>
     </ul>
 
+    <h3>💻 Programming & Software Development</h3>
+    <ul>
+      <li><a href="https://drive.google.com/file/d/1KwIYHE-La8xlaSvd0aqTH2KErdfxpSGK/view?usp=sharing" target="_blank">Python for Beginners - Faculty of Computer Science & Engineering, University of Moratuwa</a></li>
+      <li><a href="https://drive.google.com/file/d/19OTYi8hx5MEU1eIpTmxy_x2fnkYxgzLx/view?usp=sharing" target="_blank">Python Programming - From Basic to Advanced Level - Udemy</a></li>
+      <li><a href="https://courses.cognitiveclass.ai/certificates/9e430a85eee44de2aff5bcde7f08f1f7" target="_blank">Python 101 for Data Science - Cognitive Class</a></li>
+      <li><a href="https://drive.google.com/file/d/1-lZpgyFf8VKQq5wKm8CEnZ9E895NN6fc/view?usp=sharing" target="_blank">HTML, CSS, Bootstrap - Certification Course for Beginners - YouAccel</a></li>
+    </ul>
+
     <h3>🎨 UI/UX & Web Development</h3>
     <ul>
       <li><a href="https://drive.google.com/file/d/14Du7NXhsdcXWvR0AG6-mx4ghKgBT5Ujg/view?usp=sharing" target="_blank">Web Design for Beginners - Faculty of Information Technology, University of Moratuwa</a></li>
       <li><a href="https://drive.google.com/file/d/1MHasXlVrnLF38_B2l9JSgjlLGxZx8VZi/view?usp=sharing" target="_blank">UI/UX for Beginners - Great Learning</a></li>
     </ul>
 
-    <h3>🏆 Hackathons & Workshops</h3>
+    <h3>🏆 Competitions, Hackathons & Workshops</h3>
     <ul>
-      <li><a href="https://drive.google.com/file/d/120EmrDSIgoxLNZYCvI67qJSu1jFunX8f/view" target="_blank">Certificate of Participation at HACKDOZE 1.0 Python Workshop & Hackathon - University of Ruhuna</a></li>
+      <li>IEEEXtreme 18.0 - International Programming Competition (Participant)</li>
+      <li><a href="https://drive.google.com/file/d/120EmrDSIgoxLNZYCvI67qJSu1jFunX8f/view" target="_blank">HACKDOZE 1.0 Python Workshop & Hackathon - University of Ruhuna (Participation)</a></li>
     </ul>
   </div>
 </section>
 
 <section class="volunteer" id="volunteers" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
-    <h2>Volunteer <span>Experience</span> </h2>
+    <h2>Leadership & Volunteer <span>Experience</span></h2>
   </div>
   <div class="volunteers-content" data-aos="zoom-in-up">
-
     <ul>
+      <li>Presenter & Author, <b>4th Undergraduate Research Symposium 2024</b>, University of Kelaniya</li>
       <li>Editorial team member, <b>UOK ISACA Student Group</b> (2024)</li>
-      <li>Secretary team member, <b>JamborIEEE Unravel 2.0</b> (<b>IEEE Student Branches of UOK, USCS, SLIIT</b>)</li>
-      <li>Venue & Logistics member, <b>NetSec Mastery 1.0</b> (organized by <b>CSSA & LEGION of UOK</b>)</li>
-      <li>Organizing committee member, <b>FutureEve 2024</b> (<b>UOK ISACA</b>)</li>
-      <li>Secretary team member, <b>NexXtreme 1.0</b> (<b>IEEE SB UOK</b>)</li>
+      <li>Secretary team member, <b>JamborIEEE Unravel 2.0</b> and <b>NexXtreme 1.0</b> (<b>IEEE Student Branches</b>)</li>
+      <li>Organizing committee member, <b>NetSec Mastery 1.0</b> (<b>CSSA & LEGION of UOK</b>) and <b>FutureEve 2024</b> (<b>UOK ISACA</b>)</li>
       <li>
-        Member, <b>LEGION Society of University of Kelaniya</b>
-        <a href="https://drive.google.com/file/d/1SWOh2cvvdsFLEZb6g_v21CFYsLEcPuCm/view?usp=sharing"> (Click here)</a>
+        Member, <b>LEGION Society of University of Kelaniya</b> (2023 - present)
+        <a href="https://drive.google.com/file/d/1SWOh2cvvdsFLEZb6g_v21CFYsLEcPuCm/view?usp=sharing" target="_blank">(Click here)</a>
       </li>
     </ul>
-    
-
   </div>
 </section>
 
-<!-- <section class="services" id="services">
-  <div class="center-text" data-aos="fade-down">
-    <h2>My <span>Services</span> </h2>
-  </div>
-  <div class="services-content" data-aos="zoom-in-up">
-
-    <div class="box">
-
-      <img src="./img/s-1.svg" alt="">
-      <h3>UI/UX Design</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ipsam quam est ad placeat? Minus!</p>
-      <a href="#">Download Now
-        <i class="ri-arrow-right-line"></i>
-      </a>
-    </div>
-
-    <div class="box">
-
-      <img src="./img/s-2.svg" alt="">
-      <h3>UI/UX Design</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ipsam quam est ad placeat? Minus!</p>
-      <a href="#">Download Now
-        <i class="ri-arrow-right-line"></i>
-      </a>
-    </div>
-
-    <div class="box">
-
-      <img src="./img/s-3.svg" alt="">
-      <h3>UI/UX Design</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde ipsam quam est ad placeat? Minus!</p>
-      <a href="#">Download Now
-        <i class="ri-arrow-right-line"></i>
-      </a>
-    </div>
-
-  </div>
-</section> -->
-
 <section class="contact" id="contact" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
-    <h2>Contact<span>me</span></h2>
+    <h2>Contact <span>me</span></h2>
   </div>
   <div class="contact-form" data-aos="zoom-in">
     <form onsubmit="sendMail(event)">
@@ -395,77 +370,71 @@
 
 <div class="footer">
   <div class="copyright">
-    <p>&copy; 2025 Dilshana Ranawake. All Rights Reserved.</p>
+    <p>&copy; 2026 Dilshana Ranawake. All Rights Reserved.</p>
   </div>
-  <a href="#home" class="scroll-top">
-    <i class="ri-arrow-up-s-fill"></i>
-  </a>
+  <a href="#home" class="scroll-top"><i class="ri-arrow-up-s-fill"></i></a>
 </div>
-
-
+<div class="modal" id="cv-modal" aria-hidden="true">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="cv-close" aria-label="Close">&times;</button>
+    <h3>Request my CV</h3>
+    <p>Leave your details and I'll email the CV to you personally, usually within 1–2 days.</p>
+    <form id="cv-form">
+      <input type="text" id="cv-name" placeholder="Your name" required>
+      <input type="email" id="cv-email" placeholder="Email address" required>
+      <input type="text" id="cv-org" placeholder="Company / organisation" required>
+      <textarea id="cv-purpose" rows="3" placeholder="Role or purpose (e.g. AI/ML Engineer opening)" required></textarea>
+      <input type="text" id="cv-website" tabindex="-1" autocomplete="off" style="display:none"> <!-- spam honeypot -->
+      <button type="submit" class="send-btn">Send request</button>
+    </form>
+  </div>
+</div>
 <script src="./script.js"></script>
-  
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  AOS.init({
-offset:300,
-duration:1400,
-  });
-</script>
-<script>
+  AOS.init({ offset: 300, duration: 1400 });
+
   function toggleExpand(button) {
     const content = button.closest('.expand-container').querySelector('.expandable-content');
-
     if (content) {
-        content.classList.toggle('show'); // Show/hide the expandable content
-        button.classList.toggle('active'); // Rotate icon
+      content.classList.toggle('show');
+      button.classList.toggle('active');
     }
-}
-</script>
-<script>
-  
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".navlist .nav-link");
-
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove "active" class from all links
-                navLinks.forEach(link => link.classList.remove("active"));
-                
-                // Add "active" class to the matching link
-                let activeLink = document.querySelector(`.navlist a[href="#${entry.target.id}"]`);
-                if (activeLink) activeLink.classList.add("active");
-            }
-        });
-    }, { threshold: 0.6 }); // 60% of section visible triggers change
-
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          const activeLink = document.querySelector(`.navlist a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add("active");
+        }
+      });
+    }, { threshold: 0.3 }); // lowered from 0.6 so tall sections (skills, certificates) still highlight
     sections.forEach(section => observer.observe(section));
-});
-function scrollToCertificates() {
+  });
+
+  function scrollToCertificates() {
     const section = document.getElementById("certificates");
-    const offset = 250; // Adjust this value to set the scroll position
-    const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: sectionPosition, behavior: "smooth" });
+    const offset = 250;
+    window.scrollTo({ top: section.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
   }
 
-window.addEventListener("scroll", function () {
-    let logo = document.querySelector(".logo");
-    let headerName = document.querySelector(".header-name");
-    let homeSection = document.querySelector("#home");
-
+  window.addEventListener("scroll", function () {
+    const logo = document.querySelector(".logo");
+    const headerName = document.querySelector(".header-name");
+    const homeSection = document.querySelector("#home");
     if (window.scrollY > homeSection.offsetHeight - 40) {
-        headerName.style.display = "inline"; // Show name when not on home
-        logo.style.fontSize = "20px"; // Show name when not on home
-        
+      headerName.style.display = "inline";
+      logo.style.fontSize = "20px";
     } else {
-        headerName.style.display = "none";
-        logo.style.fontSize = "30px"; 
+      headerName.style.display = "none";
+      logo.style.fontSize = "30px";
     }
-});
-
+  });
 </script>
-
 </body>
 </html>
