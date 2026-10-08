@@ -1331,3 +1331,552 @@ img { max-width: 100%; }
   animation: spin .8s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== Header: its own shade ===== */
+:root,
+:root[data-theme="dark"] { --header-bg: #0c0d23; }
+:root[data-theme="light"] { --header-bg: #e3eaf7; }
+
+header,
+header.sticky {
+  background: var(--header-bg);
+  border-bottom: 1px solid rgba(var(--main-rgb), .25);
+  transition: padding .1s ease, background-color .3s ease;
+}
+
+/* ===== Header shadow per theme ===== */
+header.sticky {
+  box-shadow: 0 .2rem 2rem rgba(199, 142, 28, 0.913);
+}
+:root[data-theme="light"] header.sticky {
+  box-shadow: 0 .2rem 2rem rgba(70, 77, 218, 0.3);
+}
+
+/* mobile slide-out menu matches the header */
+@media (max-width: 1200px) {
+  .navlist { background: var(--header-bg); }
+}
+
+/* ===== Two-column rows: title left, details right ===== */
+
+/* ===== Skills: bento grid ===== */
+.techskills .container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  box-shadow: none;
+}
+.techskills .container h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.skill-card {
+  position: relative;
+  grid-column: span 2;
+  background: var(--card-color);
+  border: 1px solid rgba(var(--main-rgb), .2);
+  border-radius: 22px;
+  padding: 22px;
+  overflow: hidden;
+  transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+.skill-card:nth-of-type(1),
+.skill-card:nth-of-type(2) { grid-column: span 3; }
+.skill-card:nth-of-type(6) { grid-column: span 6; }
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(var(--main-rgb), .16), transparent 55%);
+  pointer-events: none;
+}
+.skill-card > * { position: relative; z-index: 1; }
+.skill-card:hover {
+  border-color: var(--main-color);
+  box-shadow: 0 0 20px rgba(var(--main-rgb), .25);
+  transform: translateY(-4px);
+}
+
+.skill-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.skill-ico,
+.cert-ico {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  border-radius: 12px;
+  background: rgba(var(--main-rgb), .12);
+  border: 1px solid rgba(var(--main-rgb), .3);
+}
+.skill-title {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.skill-count,
+.cert-count {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(var(--main-rgb), .12);
+  color: var(--main-color);
+}
+
+.skill-card .skills {
+  background: transparent;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 0;
+}
+.skill-card .skill {
+  padding: 6px 11px;
+  font-size: 13px;
+  border-radius: 8px;
+  background: rgba(var(--main-rgb), .07);
+  border: 1px solid rgba(var(--main-rgb), .22);
+  box-shadow: none;
+  transition: all .25s ease;
+}
+.skill-card .skill i { font-size: 13px; }
+.skill-card .skill:hover {
+  transform: translateY(-2px);
+  border-color: var(--main-color);
+  background: rgba(var(--main-rgb), .14);
+}
+
+@media (max-width: 1000px) {
+  .skill-card,
+  .skill-card:nth-of-type(n) { grid-column: span 3; }
+}
+@media (max-width: 680px) {
+  .techskills .container { grid-template-columns: 1fr; }
+  .skill-card,
+  .skill-card:nth-of-type(n) { grid-column: 1 / -1; }
+}
+
+/* ===== Certificates: accordion ===== */
+.certificates-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding-left: 0;
+}
+.cert-card {
+  background: var(--card-color);
+  border: 1px solid rgba(var(--main-rgb), .2);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.cert-card:hover { border-color: rgba(var(--main-rgb), .5); }
+.cert-card[open] {
+  border-color: rgba(var(--main-rgb), .55);
+  box-shadow: 0 0 18px rgba(var(--main-rgb), .18);
+}
+.cert-card summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+.cert-card summary::-webkit-details-marker { display: none; }
+.cert-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.cert-chev {
+  font-size: 14px;
+  color: var(--main-color);
+  transition: transform .3s ease;
+}
+.cert-card[open] .cert-chev { transform: rotate(180deg); }
+
+.certificates-content .cert-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 20px 18px;
+}
+.certificates-content .cert-card ul li,
+.certificates-content .cert-card ul li:nth-child(odd),
+.certificates-content .cert-card ul li:nth-child(even) {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  margin: 0;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border-left: 2px solid rgba(var(--main-rgb), .3);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--other-color);
+}
+.certificates-content .cert-card ul li + li { margin-top: 6px; }
+.certificates-content .cert-card ul li:hover {
+  background: rgba(var(--main-rgb), .08);
+  border-left-color: var(--main-color);
+  color: var(--text-color);
+  box-shadow: none;
+  transform: translateX(4px);
+}
+.cert-card ul li a::after {
+  content: " \2197";
+  color: var(--main-color);
+}
+
+@media (max-width: 680px) {
+  .cert-card summary { padding: 14px; gap: 10px; }
+  .certificates-content .cert-card ul { padding: 0 12px 14px; }
+}
+
+/* ===== Bigger sizes: skills + certificates ===== */
+
+/* Skills */
+.techskills .container { max-width: 1400px; gap: 26px; }
+.techskills .container h2 { margin-bottom: 1.5rem; }
+
+.skill-card { padding: 32px; border-radius: 26px; }
+.skill-head { gap: 16px; margin-bottom: 24px; }
+.skill-ico,
+.cert-ico { width: 56px; height: 56px; font-size: 26px; border-radius: 14px; }
+.skill-title { font-size: 20px; }
+.skill-count,
+.cert-count { font-size: 14px; padding: 4px 12px; }
+
+.skill-card .skills { gap: 12px; }
+.skill-card .skill {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.skill-card .skill i { font-size: 17px; }
+
+/* Certificates */
+.certificates-content { max-width: 1200px; gap: 18px; }
+.cert-card { border-radius: 22px; }
+.cert-card summary { padding: 24px 28px; gap: 18px; }
+.cert-title { font-size: 20px; }
+.cert-chev { font-size: 17px; }
+
+.certificates-content .cert-card ul { padding: 0 28px 26px; }
+.certificates-content .cert-card ul li,
+.certificates-content .cert-card ul li:nth-child(odd),
+.certificates-content .cert-card ul li:nth-child(even) {
+  padding: 15px 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  border-left-width: 3px;
+}
+.certificates-content .cert-card ul li + li { margin-top: 10px; }
+
+/* Extra large screens */
+@media (min-width: 1800px) {
+  .techskills .container { max-width: 1600px; }
+  .skill-card .skill { font-size: 18px; padding: 12px 18px; }
+  .skill-title { font-size: 22px; }
+  .certificates-content { max-width: 1400px; }
+  .cert-title { font-size: 22px; }
+  .certificates-content .cert-card ul li { font-size: 18px; }
+}
+
+/* Phones: still comfortable, not cramped */
+@media (max-width: 680px) {
+  .skill-card { padding: 22px; }
+  .skill-title { font-size: 18px; }
+  .skill-card .skill { font-size: 14.5px; padding: 8px 13px; }
+  .cert-card summary { padding: 18px; }
+  .cert-title { font-size: 17px; }
+  .certificates-content .cert-card ul { padding: 0 14px 18px; }
+  .certificates-content .cert-card ul li { font-size: 14.5px; padding: 12px 14px; }
+}
+
+/* ===== About: card + timeline ===== */
+.about {
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  align-items: center;
+}
+.about-text {
+  position: relative;
+  background: var(--card-color);
+  border: 1px solid rgba(var(--main-rgb), .2);
+  border-radius: 26px;
+  padding: 42px 46px;
+  overflow: hidden;
+  text-align: left;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.about-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(var(--main-rgb), .16), transparent 55%);
+  pointer-events: none;
+}
+.about-text > * { position: relative; z-index: 1; }
+.about-text:hover {
+  border-color: rgba(var(--main-rgb), .5);
+  box-shadow: 0 0 20px rgba(var(--main-rgb), .2);
+}
+.about-text br { display: none; }
+
+/* Section headings with a trailing line */
+.about-text h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+}
+.about-text h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(var(--main-rgb), .5), transparent);
+}
+.about-text h2:not(:first-child) { margin-top: 38px; }
+
+/* Paragraphs */
+.about-text p {
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0 0 16px;
+}
+.about-text h2 + p {
+  font-size: 18px;
+  color: var(--text-color);
+  padding-left: 18px;
+  border-left: 3px solid var(--main-color);
+}
+
+/* Education timeline */
+.about .about-text ul,
+body .about .about-text ul {
+  list-style: none !important;
+  margin: 0 0 10px 8px;
+  padding-left: 26px;
+  border-left: 2px solid rgba(var(--main-rgb), .3);
+}
+.about-text ul li {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0 24px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--other-color);
+}
+.about-text ul li:last-child { padding-bottom: 6px; }
+.about-text ul li::before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 10px rgba(var(--main-rgb), .6);
+}
+
+.about-text .btn { margin-top: 18px; }
+
+/* Tablet and phone */
+@media (max-width: 1240px) {
+  .about { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 680px) {
+  .about-text { padding: 26px 22px; border-radius: 20px; }
+  .about-text h2 + p { font-size: 16px; padding-left: 14px; }
+  .about-text p { font-size: 15px; }
+  .about-text ul li { font-size: 14.5px; }
+}
+
+/* ===== About: bigger neural network that shows around/through the card ===== */
+#neural-canvas {
+  opacity: 0.8;
+  transform: scale(1.25);
+  transform-origin: center;
+}
+
+/* card becomes slightly see-through with a soft blur, so the network glows behind it */
+.about-text {
+  background: color-mix(in srgb, var(--card-color) 78%, transparent);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+/* narrower card = more network visible on the sides */
+.about {
+  grid-template-columns: 1fr 1.6fr;
+}
+@media (max-width: 1240px) {
+  .about { grid-template-columns: 1fr; }
+  #neural-canvas { transform: scale(1.1); }
+}
+@media (max-width: 680px) {
+  #neural-canvas { opacity: 0.45; transform: none; }
+}
+
+/* ===== About: neural network overflows outside the section ===== */
+.about {
+  overflow: visible;
+  z-index: 2; /* sits above the neighbouring sections so the network isn't hidden behind them */
+}
+
+#neural-canvas {
+  inset: -180px 0;                 /* extends 180px above and below the section */
+  height: calc(100% + 360px);
+  transform: none;
+  opacity: .8;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%);
+}
+
+@media (max-width: 680px) {
+  #neural-canvas {
+    inset: -80px 0;
+    height: calc(100% + 160px);
+    opacity: .45;
+  }
+}
+
+/* ===== Extra space between About and Skills ===== */
+.about { padding-bottom: 130px; }
+.techskills { padding-top: 130px; }
+
+@media (max-width: 680px) {
+  .about { padding-bottom: 80px; }
+  .techskills { padding-top: 80px; }
+}
+
+/* stop the browser adjusting scroll position when layout shifts */
+html, body, section { overflow-anchor: none; }
+
+/* make sure only one element handles page scrolling */
+html { overflow-x: visible; }
+body { overflow-x: clip; }
+
+/* ===== About: focus on hover ===== */
+.about-text {
+  transition: transform .5s ease, box-shadow .5s ease, background .5s ease, border-color .3s ease;
+}
+.about-img,
+#neural-canvas {
+  transition: filter .5s ease, opacity .5s ease;
+}
+
+.about.focus .about-text {
+  transform: translateX(var(--shift, 0px)) scale(1.03);
+  z-index: 5;
+  background: color-mix(in srgb, var(--card-color) 92%, transparent);
+  border-color: var(--main-color);
+  box-shadow: 0 0 40px rgba(var(--main-rgb), .35);
+}
+.about.focus .about-img,
+.about.focus #neural-canvas {
+  filter: blur(8px);
+}
+
+/* ===== SmartDengue: "More details" toggle ===== */
+.row .expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  height: auto;
+  margin-top: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--main-color);
+  background: transparent !important;
+  color: var(--main-color) !important;
+  font-size: 13px;
+  cursor: pointer;
+  transform: none !important;       /* stop the whole button flipping */
+  transition: background .3s ease, color .3s ease, box-shadow .3s ease;
+}
+.row .expand-btn::before {          /* the chevron icon */
+  display: inline-block;
+  font-size: 12px;
+  transition: transform .3s ease;
+}
+.row .expand-btn::after {           /* the label */
+  content: "More details";
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .2px;
+}
+.row .expand-btn.active::after { content: "Show less"; }
+.row .expand-btn.active::before { transform: rotate(180deg); }
+
+.row .expand-btn:hover {
+  background: var(--main-color) !important;
+  color: var(--bg-color) !important;
+  box-shadow: 0 0 16px rgba(var(--main-rgb), .45);
+}
+
+/* the panel that opens */
+.expandable-content {
+  border: 1px solid rgba(var(--main-rgb), .35);
+  border-top: none;
+  box-shadow: 0 10px 24px rgba(var(--main-rgb), .22);
+}
+.expandable-content h5 {
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 0;
+  text-align: left;
+}
+.expand-container { min-width: 0; }
+
+/* ===== While a card is open, lock everything else ===== */
+body.details-open header,
+body.details-open section:not(.projects),
+body.details-open .footer,
+body.details-open .projects .center-text,
+body.details-open .Projects-content > .btn,
+body.details-open .row:not(.is-open) {
+  pointer-events: none;
+  opacity: .3 !important;          /* !important beats the AOS fade styles */
+  user-select: none;
+}
+body.details-open .row:not(.is-open) { filter: blur(2px); }
+
+header, section, .footer, .row, .Projects-content > .btn {
+  transition: opacity .3s ease, filter .3s ease;
+}
+
+/* keep the open card above its neighbours so the panel isn't covered */
+.row.is-open {
+  position: relative;
+  z-index: 5;
+  border-color: var(--main-color);
+  box-shadow: 0 0 30px rgba(var(--main-rgb), .4);
+}

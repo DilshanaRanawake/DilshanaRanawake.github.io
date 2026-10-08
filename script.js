@@ -128,3 +128,39 @@ function applyTheme(theme) {
 
 applyTheme(root.getAttribute("data-theme"));
 themeBtn.onclick = () => applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+
+/* ===== Skills: bento cards ===== */
+document.querySelectorAll(".techskills .category").forEach(cat => {
+  const skills = cat.nextElementSibling;
+  const [icon, ...rest] = cat.textContent.trim().split(/\s+/);
+  const card = document.createElement("div");
+  card.className = "skill-card";
+  card.innerHTML = `
+    <div class="skill-head">
+      <span class="skill-ico">${icon}</span>
+      <h3 class="skill-title">${rest.join(" ")}</h3>
+      <span class="skill-count">${skills.children.length}</span>
+    </div>`;
+  cat.before(card);
+  card.append(skills);
+  cat.remove();
+});
+
+/* ===== Certificates: accordion ===== */
+document.querySelectorAll(".certificates-content > h3").forEach((h, i) => {
+  const list = h.nextElementSibling;
+  const [icon, ...rest] = h.textContent.trim().split(/\s+/);
+  const card = document.createElement("details");
+  card.className = "cert-card";
+  if (i === 0) card.open = true;
+  card.innerHTML = `
+    <summary>
+      <span class="cert-ico">${icon}</span>
+      <span class="cert-title">${rest.join(" ")}</span>
+      <span class="cert-count">${list.children.length}</span>
+      <i class="fa-solid fa-chevron-down cert-chev"></i>
+    </summary>`;
+  h.before(card);
+  card.append(list);
+  h.remove();
+});
