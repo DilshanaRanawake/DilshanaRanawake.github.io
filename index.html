@@ -418,6 +418,13 @@
     document.body.classList.toggle('details-open', open);
   }
 
+  document.addEventListener('click', e => {
+    if (!document.body.classList.contains('details-open')) return;
+    if (e.target.closest('.row.is-open')) return;
+    const btn = document.querySelector('.expand-btn.active');
+    if (btn) toggleExpand(btn);
+  });
+
   // Esc closes the open card
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
