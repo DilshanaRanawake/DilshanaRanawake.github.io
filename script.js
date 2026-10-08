@@ -13,31 +13,86 @@ menu.onclick = () => {
 };
 
 window.onscroll = () => {
-    menu.classList.remove("bx-x");  // Fixed this line
-    navlist.classList.remove("active");  // Fixed this line
+    menu.classList.remove("bx-x");
+    navlist.classList.remove("active");
 };
 
+/* ===== Centered status popup (loading / success / error) ===== */
+let sending = false;
+let statusTimer = 0;
 
-function sendMail(event) {
-    event.preventDefault(); // Prevent form submission refresh
-
-    let params = {
-        from_name: document.getElementById("name").value,  // Match ID in HTML
-        from_email: document.getElementById("email").value, // Match ID in HTML
-        message: document.getElementById("message").value
-    };
-
-    emailjs.send("service_ipg7vda", "template_2r4ca7b", params)
-        .then(function(response) {
-            alert("Email Sent Successfully!");
-            console.log("SUCCESS!", response.status, response.text);
-        })
-        .catch(function(error) {
-            alert("Email failed to send.");
-            console.error("FAILED...", error);
-        });
+function getOverlay() {
+    let o = document.getElementById("status-overlay");
+    if (!o) {
+        o = document.createElement("div");
+        o.id = "status-overlay";
+        o.setAttribute("role", "alertdialog");
+        o.setAttribute("aria-live", "assertive");
+        o.innerHTML = `
+            <div class="status-box">
+                <div class="status-icon"></div>
+                <h3 class="status-title"></h3>
+                <p class="status-text"></p>
+                <button type="button" class="btn status-ok">OK</button>
+            </div>`;
+        document.body.appendChild(o);
+        o.querySelector(".status-ok").onclick = hideStatus;
+        // click outside the box closes it, except while sending
+        o.addEventListener("click", e => { if (e.target === o && !sending) hideStatus(); });
+    }
+    return o;
 }
 
+function hideStatus() {
+    clearTimeout(statusTimer);
+    getOverlay().classList.remove("show");
+}
+
+function showStatus(state, title, text = "") {
+    clearTimeout(statusTimer);
+    const o = getOverlay();
+    const box = o.querySelector(".status-box");
+    box.className = "status-box " + state;
+    box.querySelector(".status-icon").innerHTML =
+        state === "loading" ? '<div class="spinner"></div>'
+        : state === "success" ? '<i class="fa-solid fa-circle-check"></i>'
+        : '<i class="fa-solid fa-circle-xmark"></i>';
+    box.querySelector(".status-title").textContent = title;
+    box.querySelector(".status-text").textContent = text;
+    o.classList.add("show");
+    if (state === "success") statusTimer = setTimeout(hideStatus, 4000);
+}
+
+function sendEmail(params, onSuccess) {
+    if (sending) return;
+    sending = true;
+    showStatus("loading", "Sending...", "Please wait, don't close this page.");
+
+    emailjs.send("service_ipg7vda", "template_2r4ca7b", params)
+        .then(response => {
+            console.log("SUCCESS!", response.status, response.text);
+            if (onSuccess) onSuccess();
+            showStatus("success", "Message Sent!", "Thank you. I'll get back to you soon.");
+        })
+        .catch(error => {
+            console.error("FAILED...", error.status, error.text);
+            showStatus("error", "Sending Failed", "Something went wrong. Please try again.");
+        })
+        .finally(() => { sending = false; });
+}
+
+/* ===== Contact form ===== */
+function sendMail(event) {
+    event.preventDefault();
+    const form = event.target;
+    sendEmail({
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    }, () => form.reset());
+}
+
+/* ===== CV request modal ===== */
 const cvModal = document.getElementById("cv-modal");
 const toggleCv = open => cvModal.classList.toggle("show", open);
 
@@ -52,14 +107,14 @@ document.getElementById("cv-form").addEventListener("submit", function (e) {
     const org = document.getElementById("cv-org").value;
     const purpose = document.getElementById("cv-purpose").value;
 
-    emailjs.send("service_ipg7vda", "template_2r4ca7b", {
+    sendEmail({
         from_name: document.getElementById("cv-name").value,
         from_email: document.getElementById("cv-email").value,
         message: `[CV REQUEST]\nOrganisation: ${org}\nPurpose: ${purpose}`
-    })
-    .then(() => { alert("Request sent. I'll get back to you by email."); this.reset(); toggleCv(false); })
-    .catch(err => { alert("Could not send the request. Please try again."); console.error(err); });
+    }, () => { this.reset(); toggleCv(false); });
 });
+
+/* ===== Theme toggle ===== */
 const root = document.documentElement;
 const themeBtn = document.getElementById("theme-toggle");
 const themeIcon = themeBtn.querySelector("i");

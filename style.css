@@ -1286,3 +1286,48 @@ img { max-width: 100%; }
   #hero-bg-canvas { opacity: 0.6; -webkit-mask-image: none; mask-image: none; }
 }
  
+/* ===== Centered status popup ===== */
+#status-overlay {
+  position: fixed; inset: 0;
+  z-index: 30000;
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  background: rgba(5, 10, 20, .75);
+  backdrop-filter: blur(3px);
+}
+#status-overlay.show { display: flex; }
+
+.status-box {
+  width: 360px; max-width: 100%;
+  text-align: center;
+  background: var(--card-color);
+  color: var(--text-color);
+  border: 1px solid var(--main-color);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 0 25px rgba(var(--main-rgb), .45);
+  animation: statusPop .25s ease;
+}
+@keyframes statusPop {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.status-icon { font-size: 54px; line-height: 1; margin-bottom: 14px; color: var(--main-color); }
+.status-box.error .status-icon { color: #ef4444; }
+.status-box.error { border-color: #ef4444; box-shadow: 0 0 25px rgba(239, 68, 68, .4); }
+.status-title { font-size: 22px; margin-bottom: 8px; }
+.status-text { font-size: 14px; line-height: 1.6; color: var(--other-color); margin-bottom: 20px; }
+.status-ok { cursor: pointer; }
+.status-box.loading .status-ok { display: none; }
+.status-box.loading .status-text { margin-bottom: 0; }
+
+.spinner {
+  width: 54px; height: 54px;
+  margin: 0 auto;
+  border: 5px solid rgba(var(--main-rgb), .2);
+  border-top-color: var(--main-color);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
