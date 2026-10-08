@@ -164,3 +164,16 @@ document.querySelectorAll(".certificates-content > h3").forEach((h, i) => {
   card.append(list);
   h.remove();
 });
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", e => {
+        const id = a.getAttribute("href");
+        if (id.length < 2) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        let top = 0, el = target;
+        while (el) { top += el.offsetTop; el = el.offsetParent; }
+        window.scrollTo({ top: top - 70, behavior: "smooth" });
+    });
+});
