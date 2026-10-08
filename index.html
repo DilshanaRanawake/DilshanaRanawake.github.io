@@ -114,7 +114,6 @@
 
   <div class="Projects-content" data-aos="zoom-in-up">
 
-    <!-- NEW: add a screenshot to images/ and an <img> tag at the top of these two cards if you like -->
     <div class="row">
       <img src="images/thesis-symbol.jpg" alt="Hand landmarks, Raspberry Pi and Gazebo simulation for the gesture recognition project">
       <div class="main-row">
@@ -131,7 +130,6 @@
       <div class="row-text">
         <h4>Agent & RAG Systems for Research Q&A</h4>
       </div>
-      <!-- Add your repo URL below -->
       <a href="https://github.com/DilshanaRanawake/llm-agent-projects" target="_blank" style="text-decoration: none; color: inherit;">
         <div class="row-icon"><i class="ri-github-fill"></i></div>
       </a>
@@ -139,7 +137,7 @@
       <h5><b>Python, LangGraph, ChromaDB, MCP.</b> An MCP server lets Claude Desktop search my own papers, backed by a 12-case eval suite with CI. Includes a LangGraph agent that decides when to search again, a parallel searcher/analyst/writer pipeline (1.21x faster), and a static vs live-web RAG comparison on 10 questions.</h5>
     </div>
 
-    <div class="row row_3">
+    <div class="row">
       <img src="images/smartdengueprjct.jpeg" alt="">
       <div class="main-row">
         <div class="row-text">
@@ -485,18 +483,14 @@
     });
   });
 
-  window.addEventListener("scroll", function () {
-    const logo = document.querySelector(".logo");
-    const headerName = document.querySelector(".header-name");
-    const homeSection = document.querySelector("#home");
-    if (window.scrollY > homeSection.offsetHeight - 40) {
-      headerName.style.display = "inline";
-      logo.style.fontSize = "20px";
-    } else {
-      headerName.style.display = "none";
-      logo.style.fontSize = "30px";
-    }
-  });
+  const siteHeader = document.querySelector("header");
+  const homeSec = document.querySelector("#home");
+
+  function updateHeaderName() {
+    siteHeader.classList.toggle("show-name", window.scrollY > homeSec.offsetHeight - 40);
+  }
+  window.addEventListener("scroll", updateHeaderName);
+  updateHeaderName();
 
   /* About card: move to center and blur the background on hover */
   const aboutSec = document.querySelector(".about");
