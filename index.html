@@ -60,6 +60,9 @@
     <p class="cv-note">My CV includes personal contact details, so I share it on request.</p>
   </div>
 </div>
+<div class="hero-visual">
+  <canvas id="hand-canvas" aria-hidden="true"></canvas>
+</div>
 </section>
 
 <section class="about" id="about" data-aos="zoom-in-up">
@@ -175,7 +178,7 @@
   </div>
 </section>
 
-<section class="Projects" id="projects" data-aos="zoom-in-up">
+<section class="projects" id="projects" data-aos="zoom-in-up">
   <div class="center-text" data-aos="fade-down">
     <h2>My <span>Projects</span></h2>
   </div>
@@ -390,9 +393,10 @@
   </div>
 </div>
 <script src="./script.js"></script>
+<script src="./hand.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  AOS.init({ offset: 300, duration: 1400 });
+  AOS.init({ offset: window.innerWidth < 950 ? 60 : 300, duration: 1000, once: true });
 
   function toggleExpand(button) {
     const content = button.closest('.expand-container').querySelector('.expandable-content');

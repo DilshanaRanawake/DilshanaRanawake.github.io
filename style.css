@@ -406,7 +406,7 @@ body .about-text ul {
     margin-bottom: .5rem;
 }
 .row h5 {
-    font-size: 14;
+    font-size: 14px;
     font-weight: 300;
     min-height: 60px;
     color: var(--other-color);
@@ -1082,4 +1082,175 @@ form textarea {
 .certificates-content ul li,
 .volunteers-content ul li {
   box-shadow: 0 0 5px rgba(var(--main-rgb), 0.3);
+}
+
+/* ===== Responsive fixes ===== */
+html, body { overflow-x: hidden; }
+img { max-width: 100%; }
+
+/* Hero */
+.hero { min-height: 100vh; height: auto; }
+.profile { flex-wrap: nowrap; gap: 20px; }
+.main-content h4 { font-size: clamp(2rem, 7vw, 4.5rem); }
+.main-content p { width: min(100%, 700px); font-size: clamp(15px, 1.6vw, 20px); }
+
+/* Projects grid: never wider than the screen */
+.Projects-content { grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr)); }
+.row { margin-right: 0; }
+
+/* About photos stay circular */
+.about-img-1, .about-img-2 { height: auto; aspect-ratio: 1 / 1; }
+
+/* Contact form */
+.contact-form form { width: 100%; max-width: 600px; }
+
+/* Hamburger menu from 1200px down (was 950px) */
+@media (max-width: 1200px) {
+  #menu-icon { display: block; }
+  .navlist {
+    position: absolute; top: 100%; right: 0;
+    width: 255px; min-height: 100vh; flex: none;
+    flex-direction: column; background: var(--bg-color);
+    transform: translateX(100%); transition: transform .4s ease;
+  }
+  .navlist.active { transform: translateX(0); }
+  .navlist a { display: block; padding: 17px; font-size: 20px; }
+  .navlist .nav-link { margin-left: 0; }
+  .about-img { margin-bottom: 40px; }
+}
+
+/* Phones and small tablets */
+@media (max-width: 950px) {
+  /* !important beats the inline styles your scroll script sets */
+  .logo { font-size: 15px !important; line-height: 1.3; max-width: 60%; }
+  .header-name { display: none !important; }
+}
+
+@media (max-width: 680px) {
+  .about-text p { text-align: left; }
+  .certificates-content { padding-left: 0; }
+  .volunteers-content { padding: 0; }
+  .job { padding: 20px; }
+  .modal-box { padding: 24px; }
+  form .send-btn { width: 100%; }
+}
+
+.logo { display: inline-block; }
+
+/* ===== Type scale (final overrides) ===== */
+
+/* Header */
+.logo { font-size: clamp(15px, 1.6vw, 22px) !important; } /* beats the inline size set by your scroll script */
+.navlist .nav-link { font-size: 15px; }
+
+/* Hero */
+.main-content h5 { font-size: clamp(1rem, 2.4vw, 1.25rem); }
+.main-content h4 { font-size: clamp(1.8rem, 5vw, 3.2rem); margin: 12px 0; }
+.main-content p  { font-size: clamp(14px, 1.3vw, 17px); line-height: 1.7; }
+
+/* Section titles (all the same size now) */
+.center-text h2,
+.about-text h2,
+.container h2 { font-size: clamp(1.5rem, 3.6vw, 2.1rem); line-height: 1.3; }
+
+/* About */
+.about-text p,
+.about-text ul li { font-size: 15px; line-height: 1.7; }
+
+/* Skills */
+.category { font-size: 17px; }
+.skill { font-size: 14px; padding: 8px 12px; }
+.skill i { font-size: 16px; }
+
+/* Experience */
+.job h3 { font-size: clamp(17px, 2.4vw, 21px); }
+.job-meta, .job ul, .job-stack { font-size: 14px; }
+
+/* Projects */
+.row h4 { font-size: clamp(16px, 2vw, 19px); }
+.row h5 { font-size: 14px; }
+
+/* Certificates and volunteering */
+.certificates-content h3 { font-size: clamp(16px, 2.2vw, 19px); }
+.certificates-content ul li,
+.volunteers-content ul li { font-size: 14px; }
+
+/* Buttons */
+.btn, form .send-btn { font-size: 14px; }
+
+/* Mobile menu links (my earlier rule set these to 20px) */
+@media (max-width: 1200px) {
+  .navlist a { font-size: 16px; padding: 14px 17px; }
+}
+
+@media (max-width: 680px) {
+  .about-text p, .about-text ul li,
+  .certificates-content ul li,
+  .volunteers-content ul li { font-size: 13.5px; }
+  .copyright p { font-size: 13px; }
+}
+
+/* ===== Profile picture beside the name ===== */
+.profile { flex-wrap: nowrap; gap: 28px; }
+.profile .text { width: auto !important; flex: 0 1 auto; min-width: 0; }
+.profile .image-container { flex-shrink: 0; margin-top: 0; }
+
+/* ===== Large screens: scale type up ===== */
+@media (min-width: 1400px) {
+  .logo { font-size: 24px !important; }
+  .navlist .nav-link { font-size: 17px; }
+
+  .main-content h5 { font-size: 1.5rem; }
+  .main-content h4 { font-size: 4.2rem; }
+  .main-content p  { font-size: 19px; width: min(100%, 820px); }
+  .cv-note { font-size: 15px !important; }
+  .profile .image-container { width: 190px; height: 190px; max-width: 190px; max-height: 190px; }
+
+  .center-text h2, .about-text h2, .container h2 { font-size: 2.8rem; }
+  .about-text p, .about-text ul li { font-size: 17px; }
+
+  .category { font-size: 20px; }
+  .skill { font-size: 16px; padding: 10px 16px; }
+  .skill i { font-size: 18px; }
+
+  .job h3 { font-size: 24px; }
+  .job-meta, .job ul, .job-stack { font-size: 16px; }
+
+  .row h4 { font-size: 22px; }
+  .row h5 { font-size: 16px; }
+
+  .certificates-content h3 { font-size: 22px; }
+  .certificates-content ul li, .volunteers-content ul li { font-size: 16px; }
+
+  .btn, form .send-btn { font-size: 16px; }
+  .copyright p { font-size: 15px; }
+}
+
+@media (min-width: 1800px) {
+  .logo { font-size: 28px !important; }
+  .navlist .nav-link { font-size: 19px; }
+  .main-content h4 { font-size: 5rem; }
+  .main-content p  { font-size: 21px; width: min(100%, 900px); }
+  .center-text h2, .about-text h2, .container h2 { font-size: 3.2rem; }
+  .about-text p, .about-text ul li,
+  .certificates-content ul li, .volunteers-content ul li { font-size: 19px; }
+  .skill { font-size: 18px; }
+  .row h4 { font-size: 25px; }
+  .row h5 { font-size: 18px; }
+}
+/* ===== Hero: text on the left, animated hand on the right ===== */
+.hero { gap: 40px; align-items: center; }
+.main-content { flex: 1 1 58%; min-width: 0; }
+.hero-visual { flex: 1 1 42%; min-width: 0; height: min(72vh, 560px); position: relative; }
+#hand-canvas { width: 100%; height: 100%; display: block; }
+
+/* the name scales with the screen so it fits the narrower column */
+@media (min-width: 1400px) {
+  .main-content h4 { font-size: clamp(2.6rem, 3.6vw, 5rem); }
+}
+
+@media (max-width: 950px) {
+  .hero { flex-direction: column; align-items: stretch; gap: 10px; }
+  .main-content { flex: none; }
+  .hero-visual { flex: none; width: 100%; height: 340px; }
 }
