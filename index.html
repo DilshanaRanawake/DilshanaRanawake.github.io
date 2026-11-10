@@ -161,6 +161,30 @@
     </div>
 
     <div class="row">
+      <img src="images/reservation-symbol.png" alt="Resource reservation system dashboard and week calendar">
+      <div class="main-row">
+        <div class="row-text"><h4>Resource Reservation System</h4></div>
+        <a href="https://github.com/DilshanaRanawake/resource-reservation-system" target="_blank" style="text-decoration: none; color: inherit;">
+          <div class="row-icon"><i class="ri-github-fill"></i></div>
+        </a>
+      </div>
+      <h5>A booking app for shared rooms and equipment, built with <b>Next.js (App Router), TypeScript, PostgreSQL, Prisma, Zod</b> and <b>Tailwind</b>, with PostgreSQL running in <b>Docker</b>. Double-booking is prevented in the database itself with an exclusion constraint on confirmed bookings, not just in form validation. Includes a daily dashboard, week calendar per resource, search and filtering, and a usage report.</h5>
+      <a href="https://resource-reservation-system-f2udgdmia.vercel.app/" target="_blank" style="text-decoration: none; color: inherit; display: inline-block; margin-top: 8px;">
+        <div class="row-icon"><i class="ri-external-link-line"></i></div>
+      </a>
+      <div class="expand-container">
+        <i class="fa-solid fa-angle-down expand-btn" onclick="toggleExpand(this)"></i>
+        <div class="expandable-content">
+          <h5>- Overlaps are rejected by a <b>btree_gist</b> exclusion constraint, so concurrent requests can't both succeed. Zod validates input first, and the form names the conflicting booking when one is found.<br><br>
+            - Bookings use half-open <b>[start, end)</b> time ranges in UTC, so back-to-back bookings are allowed.<br><br>
+            - Cancelled bookings are kept as a record but no longer block the time slot.<br><br>
+            - Resources can be added, renamed and deactivated, and deactivated resources can't be booked.
+          </h5>
+        </div>
+      </div>
+    </div>
+      
+    <div class="row">
       <img src="images/taskmateprjct.png" alt="">
       <div class="main-row">
         <div class="row-text"><h4>Task Management System</h4></div>
